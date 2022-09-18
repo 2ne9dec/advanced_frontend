@@ -1,0 +1,19 @@
+:root {
+  /* Typography */
+  --font-family: 'Nunito Sans', sans-serif;
+
+  --font-size-sm: 16px;
+  --line-height-sm: 24px;
+  --font-sm: var(--font-size-sm) / var(--line-height-sm) / var(--font-family);
+
+  --font-size-md: 24px;
+  --line-height-md: 32px;
+  --font-md: var(--font-size-md) / var(--line-height-md) / var(--font-family);
+
+  /* Options */
+  --min-width: 320;
+  --max-width: 1440;
+
+  /* Other */
+  --radii: 0.5rem;
+}
