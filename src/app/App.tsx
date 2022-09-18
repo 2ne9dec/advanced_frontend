@@ -1,10 +1,10 @@
 import { Suspense } from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
-import { AboutPageAsync } from './pages/AboutPage/AboutPage.async';
-import { MainPageAsync } from './pages/MainPage/MainPage.async';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
-import { useTheme } from './theme/useTheme';
-import { classNames } from './helpers/classNames/classNames';
+import { useTheme } from './providers/ThemeProvider';
+import { classNames } from 'shared/lib/classNames/classNames';
+import { MainPage } from 'pages/MainPage/';
+import { AboutPage } from 'pages/AboutPage/';
 import './styles/app.scss';
 
 const App = () => {
@@ -21,8 +21,8 @@ const App = () => {
 
       <Suspense fallback={<div>Загрузка...</div>}>
         <Routes>
-          <Route path='/' element={<MainPageAsync />} />
-          <Route path='/about' element={<AboutPageAsync />} />
+          <Route path='/' element={<MainPage />} />
+          <Route path='/about' element={<AboutPage />} />
         </Routes>
       </Suspense>
     </div>
