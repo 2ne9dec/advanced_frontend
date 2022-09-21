@@ -1,11 +1,9 @@
-import { Suspense } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { IoMoon, IoMoonOutline } from 'react-icons/io5';
 import { useTheme } from './providers/ThemeProvider';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { MainPage } from 'pages/MainPage/';
-import { AboutPage } from 'pages/AboutPage/';
 import './styles/app.scss';
+import { AppRouter } from './providers/router';
 
 const App = () => {
   const { theme, toggleTheme } = useTheme();
@@ -19,12 +17,7 @@ const App = () => {
         {theme === 'light' ? <IoMoonOutline size='18px' /> : <IoMoon size='18px' />}
       </button>
 
-      <Suspense fallback={<div>Загрузка...</div>}>
-        <Routes>
-          <Route path='/' element={<MainPage />} />
-          <Route path='/about' element={<AboutPage />} />
-        </Routes>
-      </Suspense>
+      <AppRouter />
     </div>
   );
 };
