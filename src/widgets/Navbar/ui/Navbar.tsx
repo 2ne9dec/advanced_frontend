@@ -11,7 +11,6 @@ export const Navbar = (props: NavBarProps) => {
 
   return (
     <nav className={classNames(cls.Navbar, {}, [className])}>
-      
       <div className={cls.links}>
         <AppLink className={AppLinkTheme.DARK} to='/about'>
           Go to about Page

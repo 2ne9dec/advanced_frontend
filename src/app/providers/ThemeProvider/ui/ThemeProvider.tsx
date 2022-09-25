@@ -7,9 +7,9 @@ const ThemeProvider: FC<ThemeContextProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
 
   const defaultProps = useMemo(() => ({
-    theme,
-    setTheme
-  }),[theme]);
+      theme,
+      setTheme,
+    }),[theme]);
 
   useEffect(() => {
     document.body.setAttribute('data-theme', theme);
