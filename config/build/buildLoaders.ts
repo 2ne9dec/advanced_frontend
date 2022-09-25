@@ -28,5 +28,33 @@ export function buildLoaders({ isDev }: BuildOptions): RuleSetRule[] {
     ],
   };
 
-  return [typescriptLoader, cssLoader];
+  const svgLoader = {
+    test: /\.svg$/,
+    use: ['@svgr/webpack'],
+  };
+
+  const urlLoader = {
+    test: /\.(png|jpg|gif)$/i,
+    use: [
+      {
+        loader: 'url-loader',
+        options: {
+          limit: 4096,
+        },
+      },
+    ],
+  };
+
+  const babelLoader = {
+    test: /\.(js|jsx|tsx)$/,
+    exclude: /node_modules/,
+    use: {
+      loader: 'babel-loader',
+      options: {
+        presets: ['@babel/preset-env'],
+      },
+    },
+  };
+
+  return [urlLoader, svgLoader, babelLoader, typescriptLoader, cssLoader];
 }

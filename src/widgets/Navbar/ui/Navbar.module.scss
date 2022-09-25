@@ -1,0 +1,15 @@
+.Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  box-shadow: var(--shadow);
+  height: var(--navbar-height);
+
+  .links {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    padding: 20px;
+  }
+}
