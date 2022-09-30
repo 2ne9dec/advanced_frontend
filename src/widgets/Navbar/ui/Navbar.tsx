@@ -10,7 +10,7 @@ export const Navbar = (props: NavBarProps) => {
   const { className } = props;
 
   return (
-    <nav className={classNames(cls.Navbar, {}, [className ?? ''])}>
+    <nav className={classNames(cls.Navbar, {}, [className])}>
       <div className={cls.links}>
         <AppLink className={AppLinkTheme.DARK} to='/about'>
           Go to about Page
