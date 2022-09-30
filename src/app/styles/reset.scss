@@ -17,9 +17,6 @@ body {
   font-weight: var(--fw-light);
   background-color: var(--colors-bg);
   scroll-behavior: smooth;
-  -ms-text-size-adjust: 100%;
-  -moz-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -57,10 +54,10 @@ a {
   }
 }
 
-ul li,
 li {
   list-style: none;
 }
+
 img {
   vertical-align: top;
   object-fit: cover;

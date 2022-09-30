@@ -2,27 +2,29 @@ module.exports = {
   env: {
     browser: true,
     es2021: true,
+    jest: true,
   },
-  extends: ['plugin:react/recommended', 'standard-with-typescript'],
-  overrides: [],
+  extends: [
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/recommended',
+    'plugin:i18next/recommended',
+    'prettier',
+  ],
+  parser: '@typescript-eslint/parser',
   parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
     ecmaVersion: 'latest',
     sourceType: 'module',
-    project: './tsconfig.json',
   },
-  plugins: ['react'],
+  plugins: [
+    'react',
+    '@typescript-eslint',
+    'i18next',
+    'prettier'
+  ],
   rules: {
     'react/react-in-jsx-scope': 'off',
-    'comma-dangle': 'off',
-    semi: 'off',
-    '@typescript-eslint/semi': 'off',
-    '@typescript-eslint/explicit-function-return-type': 'off',
-    '@typescript-eslint/strict-boolean-expressions': 'off',
-    '@typescript-eslint/member-delimiter-style': 'off',
-    '@typescript-eslint/comma-dangle': 'off',
-    '@typescript-eslint/space-before-function-paren': 'off',
-    '@typescript-eslint/promise-function-async': 'off',
-    '@typescript-eslint/no-floating-promises': 'off',
-    '@typescript-eslint/naming-convention': 'off',
   },
 };

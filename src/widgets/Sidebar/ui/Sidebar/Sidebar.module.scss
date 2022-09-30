@@ -1,8 +1,7 @@
 .Sidebar {
   height: calc(100vh - var(--navbar-height));
   width: 18.75rem;
-  border-right: 1px solid rgba(149, 157, 165, 0.2);
-
+  border-right: 1px solid rgb(149 157 165 / 20%);
   position: relative;
   transition: width 0.3s ease 0s;
 }
