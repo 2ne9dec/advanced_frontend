@@ -4,3 +4,4 @@
 *.js
 *.svg
 /node_modules
+/public

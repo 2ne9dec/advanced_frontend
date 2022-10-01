@@ -1,5 +1,8 @@
 {
-  "Examle": "Добро пожаловать в реакт",
   "Translate": "Перевод",
-  "Language": "Русский"
+  "Language": "Русский",
+  "Navbar": "Navbar",
+  "Main": "Главная",
+  "About": "О нас",
+  "Not Found Page": "Страница не найдена"
 }
