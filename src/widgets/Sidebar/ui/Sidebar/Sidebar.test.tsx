@@ -3,12 +3,12 @@ import { renderWithTranslation } from 'shared/lib/tests/renderWithtranslation';
 import { Sidebar } from './Sidebar';
 
 describe('Sidebar', () => {
-  test('Test render Sidebar', () => {
+  test('Test render', () => {
     renderWithTranslation(<Sidebar />);
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
   });
 
-  test('Test toggle Sidebar', () => {
+  test('Test toggle btn', () => {
     renderWithTranslation(<Sidebar />);
     const toggleBtn = screen.getByTestId('sidebar-toggle');
     expect(screen.getByTestId('sidebar')).toBeInTheDocument();
