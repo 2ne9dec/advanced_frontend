@@ -22,4 +22,12 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
   },
+  overrides: [
+    {
+      files: ['**/src/**/*.test.{ts,tsx}'],
+      rules: {
+        'i18next/no-literal-string': 'off',
+      },
+    },
+  ],
 };
