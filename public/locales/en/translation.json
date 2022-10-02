@@ -4,5 +4,8 @@
   "Navbar": "Navbar",
   "Main": "Main",
   "About": "About",
-  "Not Found Page": "Not Found Page"
+  "Not Found Page": "Not Found Page",
+  "Error": "Something went wrong!",
+  "Update Page": "Update Page",
+  "throw error": "throw new error"
 }

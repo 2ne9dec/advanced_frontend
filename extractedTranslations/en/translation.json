@@ -2,6 +2,7 @@
   "": "",
   "About": "About",
   "About Page": "About Page",
+  "Error": "Error",
   "G": "G",
   "Go To About": "Go To About",
   "Go To Main": "Go To Main",
@@ -11,5 +12,7 @@
   "Navbar": "Navbar",
   "Not Found Page": "Not Found Page",
   "Toggle": "Toggle",
-  "Toogle": "Toogle"
+  "Toogle": "Toogle",
+  "Update Page": "Update Page",
+  "throw error": "throw error"
 }
