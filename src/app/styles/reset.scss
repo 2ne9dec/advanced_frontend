@@ -1,7 +1,6 @@
 * {
   padding: 0;
   margin: 0;
-  border: 0;
   box-sizing: border-box;
 }
 
@@ -12,10 +11,6 @@ body {
 }
 
 body {
-  font: var(--font-sm);
-  color: var(--colors-text);
-  font-weight: var(--fw-light);
-  background-color: var(--colors-bg);
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -28,7 +23,7 @@ body {
 input,
 button,
 textarea {
-  font: var(--font-sm);
+  font: inherit;
 }
 
 input:focus,

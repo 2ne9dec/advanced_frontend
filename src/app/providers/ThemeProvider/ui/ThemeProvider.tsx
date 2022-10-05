@@ -1,7 +1,7 @@
-import { FC, useState, useEffect, useMemo } from 'react';
+import { FC, useState, useMemo } from 'react';
 import { LOCAL_STORAGE_THEME_KEY, Theme, ThemeContext, ThemeContextProps } from '../lib/ThemeContext';
 
-const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.DARK;
+const defaultTheme = (localStorage.getItem(LOCAL_STORAGE_THEME_KEY) as Theme) || Theme.LIGHT;
 
 const ThemeProvider: FC<ThemeContextProps> = ({ children }) => {
   const [theme, setTheme] = useState<Theme>(defaultTheme);
@@ -10,10 +10,6 @@ const ThemeProvider: FC<ThemeContextProps> = ({ children }) => {
     theme,
     setTheme,
   }), [theme]);
-
-  useEffect(() => {
-    document.body.setAttribute('data-theme', theme);
-  }, [theme]);
 
   return (
     <ThemeContext.Provider value={defaultProps}>

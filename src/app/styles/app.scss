@@ -7,13 +7,10 @@
 
 .app {
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-
-  > main {
-    flex: 1 1 auto;
-  }
+  font: var(--font-sm);
+  color: var(--colors-text);
+  font-weight: var(--fw-light);
+  background-color: var(--colors-bg);
 }
 
 .content-page {
