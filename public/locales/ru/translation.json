@@ -7,5 +7,6 @@
   "Not Found Page": "Страница не найдена",
   "Error": "Произошло непредвиденная ошибка!",
   "Update Page": "Обновить страницу",
-  "throw error": "throw new error"
+  "throw error": "throw new error",
+  "toggle": "Toggle"
 }
