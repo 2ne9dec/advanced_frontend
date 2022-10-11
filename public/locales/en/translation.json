@@ -7,5 +7,6 @@
   "Not Found Page": "Not Found Page",
   "Error": "Something went wrong!",
   "Update Page": "Update Page",
-  "throw error": "throw new error"
+  "throw error": "throw new error",
+  "toggle": "Toggle"
 }
