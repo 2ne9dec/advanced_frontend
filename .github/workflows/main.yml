@@ -20,7 +20,8 @@ jobs:
       - name: install modules
         run: npm install
       - name: Setup Chrome
-        uses: browser-actions/setup-chrome@v0.0.0
+        uses: browser-actions/setup-chrome@latest
+        run: chrome --version
       - name: build production project
         run: npm run build:prod
       - name: linting typescript
