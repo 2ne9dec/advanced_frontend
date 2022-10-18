@@ -8,5 +8,6 @@
   "Error": "Произошло непредвиденная ошибка!",
   "Update Page": "Обновить страницу",
   "throw error": "throw new error",
-  "toggle": "Toggle"
+  "toggle": "Toggle",
+  "Short_Language": "Ru"
 }
