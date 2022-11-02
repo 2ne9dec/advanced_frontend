@@ -89,6 +89,7 @@
     "webpack-dev-server": "^4.11.0"
   },
   "dependencies": {
+    "eslint-plugin-react-hooks": "^4.6.0",
     "i18next": "^21.9.2",
     "i18next-browser-languagedetector": "^6.1.5",
     "i18next-http-backend": "^1.4.4",

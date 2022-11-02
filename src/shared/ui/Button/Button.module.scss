@@ -6,10 +6,16 @@
   justify-content: center;
 }
 
-.clear {
+.clear,
+.clearInverted {
+  padding: 0;
   border: none;
   background: none;
   outline: none;
+}
+
+.clearInverted {
+  color: var(--colors-text);
 }
 
 .outline {
@@ -28,6 +34,10 @@
   background: var(--colors-bg-inverted);
   color: var(--colors-text-inverted);
   border: none;
+}
+
+.square {
+  padding: 0;
 }
 
 .square.size_sm {

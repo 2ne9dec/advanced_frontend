@@ -1,8 +1,6 @@
-.light {
+body[data-theme='light'] {
   --colors-text: hsl(200deg 15% 8%);
   --colors-text-inverted: hsl(0deg 0% 100%);
   --colors-bg: hsl(0deg 0% 98%);
-  --colors-bg-inverted: hsl(207deg 26% 17%);;
-  --colors-ui-base: hsl(0deg 0% 100%);
-  --shadow: rgb(149 157 165 / 20%) 0 8px 24px;
+  --colors-bg-inverted: hsl(228deg 12% 24%);
 }

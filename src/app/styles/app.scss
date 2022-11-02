@@ -1,14 +1,14 @@
 @import 'https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap';
 
-@import './variables/variables';
-@import './reset';
-@import './themes/light';
-@import './themes/dark';
+@import 'variables/variables';
+@import 'reset';
+@import 'themes/light';
+@import 'themes/dark';
 
 .app {
-  min-height: 100vh;
   font: var(--font-sm);
   color: var(--colors-text);
+  min-height: 100vh;
   font-weight: var(--fw-light);
   background-color: var(--colors-bg);
 }

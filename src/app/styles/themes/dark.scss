@@ -1,8 +1,6 @@
-.dark {
+body[data-theme='dark'] {
   --colors-text: hsl(0deg 0% 100%);
   --colors-text-inverted: hsl(200deg 15% 8%);
-  --colors-bg: hsl(207deg 26% 17%);
+  --colors-bg: hsl(228deg 12% 24%);
   --colors-bg-inverted: hsl(0deg 0% 98%);
-  --colors-ui-base: hsl(209deg 23% 22%);
-  --shadow: rgb(245 245 245 / 20%) 0 0 8px;
 }
