@@ -20,10 +20,17 @@ export const Navbar = (props: NavBarProps) => {
 
   return (
     <nav className={classNames(cls.Navbar, {}, [className])}>
-      <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onToggleModal}>
+      <Button
+        theme={ButtonTheme.CLEAR_INVERTED}
+        className={cls.links}
+        onClick={onToggleModal}
+      >
         {t('Log_In')}
       </Button>
-      <Modal isOpen={isAuthModal} onClose={onToggleModal}>
+      <Modal
+        isOpen={isAuthModal}
+        onClose={onToggleModal}
+      >
         {`Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum conseqmolestiae vel fuga pariatur eveniet corporis.`}
       </Modal>
     </nav>

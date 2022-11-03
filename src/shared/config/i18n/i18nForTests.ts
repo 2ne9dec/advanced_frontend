@@ -6,13 +6,10 @@ i18n
   .init({
     lng: 'en',
     fallbackLng: 'en',
-
     debug: false,
-
     interpolation: {
       escapeValue: false, // not needed for react!!
     },
-
     resources: { en: { translations: {} } },
 });
 

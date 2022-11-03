@@ -26,4 +26,4 @@ Dark.args = {
   children:
     'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati iusto vero ullam a aliquid ex vitae tenetur sunt earum inventore ab vel repellat placeat sed animi, fugiat similique reiciendis minus excepturi. Quae aut pariatur magni incidunt tempore tempora iusto ex.',
 };
-Dark.decorators = [ThemeDecorator(Theme.DARK)]
+Dark.decorators = [ThemeDecorator(Theme.DARK)];

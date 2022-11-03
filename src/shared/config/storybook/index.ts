@@ -1,5 +1,3 @@
-import { StyleDecorator } from './Decorators/StyleDecorator';
-import { ThemeDecorator } from './Decorators/ThemeDecorator';
-import { RouteDecorator } from './Decorators/RouteDecorator';
-
-export { StyleDecorator, ThemeDecorator, RouteDecorator };
+export { StyleDecorator } from './Decorators/StyleDecorator';
+export { ThemeDecorator } from './Decorators/ThemeDecorator';
+export { RouteDecorator } from './Decorators/RouteDecorator';
