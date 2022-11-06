@@ -3,15 +3,15 @@ const fs = require('fs');
 const jsonServer = require('json-server');
 const path = require('path');
 
-const server = jsonServer.create();
 const PORT = 8000;
+const server = jsonServer.create();
 
 const router = jsonServer.router(path.resolve(__dirname, 'db.json'));
 
 server.use(jsonServer.defaults({}));
 server.use(jsonServer.bodyParser);
 
-// Нужно для небольшой задержки, чтобы запрос проходил не мгновенно, имитация реального апи
+//Небольшпя задержкп, чтобы запрос проходил не мгновенно, имитация реального api
 server.use(async (req, res, next) => {
   await new Promise((res) => {
     setTimeout(res, 800);
@@ -39,11 +39,10 @@ server.post('/login', (req, res) => {
   }
 });
 
-// проверяем, авторизован ли пользователь
-// eslint-disable-next-line
+// Проверяем, авторизован ли пользователь
 server.use((req, res, next) => {
   if (!req.headers.authorization) {
-    return res.status(403).json({ message: 'AUTH ERROR' });
+    return res.status(403).json({ message: 'Auth Error' });
   }
 
   next();
@@ -51,7 +50,7 @@ server.use((req, res, next) => {
 
 server.use(router);
 
-// запуск сервера
+// Запуск сервера
 server.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
