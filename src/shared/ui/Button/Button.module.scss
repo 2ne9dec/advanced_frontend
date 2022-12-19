@@ -1,9 +1,10 @@
 .Button {
-  padding: 6px 15px;
-  cursor: pointer;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  padding: 6px 15px;
+  color: var(--colors-primary);
 }
 
 .clear,
@@ -15,24 +16,24 @@
 }
 
 .clearInverted {
-  color: var(--colors-text);
+  color: var(--colors-primary-inverted);
 }
 
 .outline {
-  border: 1px solid var(--colors-text);
-  color: var(--colors-text);
+  border: 1px solid var(--colors-primary);
+  color: var(--colors-primary);
   background: none;
 }
 
 .background {
   background: var(--colors-bg);
-  color: var(--colors-text);
+  color: var(--colors-primary);
   border: none;
 }
 
 .backgroundInverted {
   background: var(--colors-bg-inverted);
-  color: var(--colors-text-inverted);
+  color: var(--colors-primary-inverted);
   border: none;
 }
 
@@ -40,20 +41,33 @@
   padding: 0;
 }
 
-.square.size_sm {
-  width: var(--line-height-sm);
-  height: var(--line-height-sm);
+.square.size_m {
+  width: var(--font-line-m);
+  height: var(--font-line-m);
 }
 
-.square.size_md {
-  width: var(--line-height-md);
-  height: var(--line-height-md);
+.square.size_l {
+  width: var(--font-line-l);
+  height: var(--font-line-l);
 }
 
-.size_sm {
-  font-size: var(--font-size-sm);
+.square.size_xl {
+  width: var(--font-line-xl);
+  height: var(--font-line-xl);
 }
 
-.size_md {
-  font-size: var(--font-size-md);
+.size_m {
+  font: var(--font-m);
+}
+
+.size_l {
+  font: var(--font-l);
+}
+
+.size_xl {
+  font: var(--font-xl);
+}
+
+.disabled {
+  opacity: 0.5;
 }

@@ -4,11 +4,16 @@
   "Toggle": "Toggle",
   "Main": "Главная",
   "About": "О нас",
-  "Not Found Page": "Страница не найдена",
   "Error": "Произошло непредвиденная ошибка!",
   "Update Page": "Обновить страницу",
   "throw error": "throw new error",
   "toggle": "Toggle",
   "Short_Language": "Ru",
-  "Log_In": "Войти"
+  "Log_In": "Войти",
+  "authorization": "Форма Авторизации",
+  "username": "Имя пользователя",
+  "password": "Пароль",
+  "not-found-page": "Страница не найдена",
+  "error-login-or-password": "Вы ввели неверный логин или пароль",
+  "Log_Out": "Выйти"
 }

@@ -1,11 +1,16 @@
 {
   "About": "About",
-  "About Page": "About Page",
   "Error": "Error",
   "Log_In": "Log_In",
+  "Log_Out": "Log_Out",
   "Main": "Main",
-  "Main Page": "Main Page",
-  "Not Found Page": "Not Found Page",
   "Update Page": "Update Page",
-  "throw error": "throw error"
+  "authorization": "authorization",
+  "error-login-or-password": "error-login-or-password",
+  "not-found-page": "not-found-page",
+  "password": "password",
+  "throw error": "throw error",
+  "username": "username",
+  "Войти": "Войти",
+  "Выйти": "Выйти"
 }

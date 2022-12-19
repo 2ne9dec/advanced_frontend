@@ -3,11 +3,14 @@
 @import 'themes/light';
 @import 'themes/dark';
 
+.app,
+.app_modal {
+  font: var(--font-m);
+  color: var(--colors-primary);
+}
+
 .app {
-  font: var(--font-sm);
-  color: var(--colors-text);
   min-height: 100vh;
-  font-weight: var(--fw-light);
   background-color: var(--colors-bg);
 }
 
@@ -18,6 +21,4 @@
 .page-wrapper {
   flex-grow: 1;
   padding: 20px;
-  background-color: var(--colors-bg-inverted);
-  color: var(--colors-text-inverted);
 }

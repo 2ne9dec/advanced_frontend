@@ -1,28 +1,28 @@
 .Sidebar {
   height: calc(100vh - var(--navbar-height));
   width: var(--sidebar-width);
-  background: var(--colors-bg);
+  background: var(--colors-bg-inverted);
   position: relative;
-  transition: width 0.3s ease 0s;
+  transition: width 0.3s;
 }
 
 .switchers {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.2rem;
+  gap: 1rem;
   position: absolute;
   bottom: 1rem;
   width: 100%;
 }
 
-.collapsedBtn {
+.collapseBtn {
   position: absolute;
   right: -32px;
-  bottom: 50px;
+  bottom: 32px;
 }
 
-.links {
+.items {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
   margin: 25px;
 }
 
-.link {
+.item {
   padding: 10px;
   display: flex;
   align-items: center;
@@ -38,14 +38,14 @@
   transition: opacity 0.3s ease 0s;
 }
 
-.text {
+.link {
   &:hover {
     text-decoration: underline;
   }
 }
 
 .icon {
-  fill: var(--colors-text);
+  fill: var(--colors-primary-inverted);
 }
 
 .collapsed {
@@ -62,7 +62,7 @@
     }
   }
 
-  .text {
+  .link {
     opacity: 0;
     transition: 0.2s opacity;
     width: 0;

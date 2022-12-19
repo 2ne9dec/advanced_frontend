@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { useTranslation } from 'react-i18next';
-import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
-import { Button, ButtonForm, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import { LangSwitcher } from 'widgets/Navbar/LangSwitcher';
+import { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/Navbar/ThemeSwitcher';
-import cls from './Sidebar.module.scss';
+import { LangSwitcher } from 'widgets/Navbar/LangSwitcher';
+import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
+import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
+import { RoutePath } from 'shared/config/routeConfig/routeConfig';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import MainIcon from 'shared/assets/icons/main-20-20.svg';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
@@ -16,7 +16,6 @@ interface SidebarProps {
 
 export const Sidebar = ({ className }: SidebarProps) => {
   const [collapsed, setCollapsed] = useState(false);
-
   const { t } = useTranslation('translation');
 
   const onToggle = () => {
@@ -31,31 +30,31 @@ export const Sidebar = ({ className }: SidebarProps) => {
       <Button
         data-testid='sidebar-toggle'
         onClick={onToggle}
-        className={cls.collapsedBtn}
-        theme={ButtonTheme.BACKGROUND}
-        square={ButtonForm.SQUARE}
-        size={ButtonSize.MD}
+        className={cls.collapseBtn}
+        theme={ButtonTheme.BACKGROUND_INVERTED}
+        size={ButtonSize.L}
+        square
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={cls.links}>
+      <div className={cls.items}>
         <AppLink
           theme={AppLinkTheme.DARK}
           to={RoutePath.main}
-          className={cls.link}
+          className={cls.item}
         >
           <MainIcon className={cls.icon} />
-          <span className={cls.text}>
+          <span className={cls.link}>
             {t('Main')}
           </span>
         </AppLink>
         <AppLink
           theme={AppLinkTheme.DARK}
           to={RoutePath.about}
-          className={cls.link}
+          className={cls.item}
         >
           <AboutIcon className={cls.icon} />
-          <span className={cls.text}>
+          <span className={cls.link}>
             {t('About')}
           </span>
         </AppLink>

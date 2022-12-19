@@ -7,7 +7,7 @@
   opacity: 0;
   z-index: -1;
   pointer-events: none;
-  color: var(--colors-text);
+  color: var(--colors-primary);
 }
 
 .overlay {
@@ -31,7 +31,7 @@
 .opened {
   pointer-events: auto;
   opacity: 1;
-  z-index: 10;
+  z-index: var(--z-index-modal);
 
   .content {
     transform: scale(1);

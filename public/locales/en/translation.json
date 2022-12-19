@@ -4,11 +4,16 @@
   "Toggle": "Toggle",
   "Main": "Main",
   "About": "About",
-  "Not Found Page": "Not Found Page",
   "Error": "Something went wrong!",
   "Update Page": "Update Page",
   "throw error": "throw new error",
   "toggle": "Toggle",
   "Short_Language": "En",
-  "Log_In": "Log In"
+  "Log_In": "Log In",
+  "authorization": "Authorization Form",
+  "username": "Username",
+  "password": "Password",
+  "not-found-page": "Not Found Page",
+  "error-login-or-password": "Error login or password",
+  "Log_Out": "Log Out"
 }

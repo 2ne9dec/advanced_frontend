@@ -1,3 +1,15 @@
 .AppLink {
-  color: var(--colors-text);
+  color: var(--colors-primary);
+}
+
+.light {
+  color: var(--colors-primary);
+}
+
+.dark {
+  color: var(--colors-primary-inverted);
+}
+
+.red {
+  color: red;
 }

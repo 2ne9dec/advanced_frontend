@@ -1,6 +1,8 @@
 body[data-theme='light'] {
-  --colors-text: hsl(200deg 15% 8%);
-  --colors-text-inverted: hsl(0deg 0% 100%);
-  --colors-bg: hsl(0deg 0% 98%);
-  --colors-bg-inverted: hsl(228deg 12% 24%);
+  --colors-primary: #0232c2;
+  --colors-primary-inverted: #04ff04;
+  --colors-secondary: #0449e0;
+  --colors-secondary-inverted: #049604;
+  --colors-bg: #e8e8ea;
+  --colors-bg-inverted: #090949;
 }

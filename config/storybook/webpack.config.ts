@@ -1,5 +1,5 @@
 import path from 'path';
-import { Configuration } from 'webpack';
+import { Configuration, DefinePlugin } from 'webpack';
 import { buildCssLoaders } from '../build/loaders/buildCssLoaders/buildCssLoaders';
 import { BuildPaths } from '../build/types/config';
 
@@ -10,10 +10,17 @@ export default ({ config }: { config: Configuration }) => {
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
   };
-  config.resolve?.modules?.push(paths.src);
+
+  config!.resolve!.modules = [paths.src, 'node_modules'];
   config.resolve?.extensions?.push('.ts', '.tsx');
 
   config.module?.rules?.push(buildCssLoaders(true));
+
+  config?.plugins?.push(
+    new DefinePlugin({
+      IS_DEV: true,
+    }),
+  );
 
   return config;
 };
