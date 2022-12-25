@@ -1,0 +1,31 @@
+.item {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: opacity 0.3s ease 0s;
+}
+
+.link {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.icon {
+  fill: var(--colors-primary-inverted);
+}
+
+.collapsed {
+  .link {
+    opacity: 0;
+    transition: 0.2s opacity;
+    width: 0;
+  }
+
+  .icon {
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

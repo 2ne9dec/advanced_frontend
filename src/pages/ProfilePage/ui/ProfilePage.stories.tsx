@@ -1,29 +1,22 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
-import { Navbar } from './Navbar';
 import { StoreDecorator, ThemeDecorator } from 'shared/config/storybook';
+import ProfilePage from './ProfilePage';
 
 export default {
-  title: 'widgets/Navbar',
-  component: Navbar,
+  title: 'pages/ProfilePage',
+  component: ProfilePage,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Navbar>;
+} as ComponentMeta<typeof ProfilePage>;
 
-const Template: ComponentStory<typeof Navbar> = (args) => <Navbar {...args} />;
+const Template: ComponentStory<typeof ProfilePage> = (args) => <ProfilePage {...(args as object)} />;
 
 export const Light = Template.bind({});
 Light.args = {};
 Light.decorators = [StoreDecorator({})];
+
 export const Dark = Template.bind({});
 Dark.args = {};
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})];
-
-export const AuthNavbar = Template.bind({});
-AuthNavbar.args = {};
-AuthNavbar.decorators = [
-  StoreDecorator({
-    user: { authData: {} },
-  }),
-];

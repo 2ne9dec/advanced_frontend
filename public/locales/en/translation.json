@@ -2,8 +2,8 @@
   "Translate": "Translate",
   "Language": "English",
   "Toggle": "Toggle",
-  "Main": "Main",
-  "About": "About",
+  "Main Page": "Main",
+  "About Page": "About",
   "Error": "Something went wrong!",
   "Update Page": "Update Page",
   "throw error": "throw new error",
@@ -15,5 +15,6 @@
   "password": "Password",
   "not-found-page": "Not Found Page",
   "error-login-or-password": "Error login or password",
-  "Log_Out": "Log Out"
+  "Log_Out": "Log Out",
+  "Profile Page": "Profile"
 }

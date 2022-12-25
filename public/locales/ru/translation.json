@@ -2,8 +2,8 @@
   "Translate": "Перевод",
   "Language": "Русский",
   "Toggle": "Toggle",
-  "Main": "Главная",
-  "About": "О нас",
+  "Main Page": "Главная",
+  "About Page": "О нас",
   "Error": "Произошло непредвиденная ошибка!",
   "Update Page": "Обновить страницу",
   "throw error": "throw new error",
@@ -15,5 +15,6 @@
   "password": "Пароль",
   "not-found-page": "Страница не найдена",
   "error-login-or-password": "Вы ввели неверный логин или пароль",
-  "Log_Out": "Выйти"
+  "Log_Out": "Выйти",
+  "Profile Page": "Профиль"
 }
