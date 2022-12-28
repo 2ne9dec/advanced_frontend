@@ -1,15 +1,11 @@
 import { Reducer } from '@reduxjs/toolkit';
-import { ReduxStoreWithManager } from 'app/providers/StoreProvider';
-import { StateSchemaKey } from 'app/providers/StoreProvider/config/StateSchema';
+import { ReduxStoreWithManager, StateSchemaKey } from 'app/providers/StoreProvider';
 import { FC, ReactNode, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { useStore } from 'react-redux';
+import { useDispatch, useStore } from 'react-redux';
 
 export type ReducerList = {
   [name in StateSchemaKey]?: Reducer;
 };
-
-type ReducerListEntry = [StateSchemaKey, Reducer];
 
 interface DynamicModuleLoaderProps {
   children: ReactNode;
@@ -24,16 +20,16 @@ export const DynamicModuleLoader: FC<DynamicModuleLoaderProps> = (props) => {
   const store = useStore() as ReduxStoreWithManager;
 
   useEffect(() => {
-    Object.entries(reducers).forEach(([name, reducer]: ReducerListEntry) => {
-      store.reducerManager.add(name, reducer);
+    Object.entries(reducers).forEach(([name, reducer]) => {
+      store.reducerManager.add(name as StateSchemaKey, reducer);
       dispatch({ type: `@INIT ${name} reducer` });
     });
 
     return () => {
-      Object.entries(reducers).forEach(([name]: ReducerListEntry) => {
+      Object.entries(reducers).forEach(([name]) => {
         if (removeAfterUnmount) {
           store.reducerManager.remove('loginForm');
-          dispatch({ type: `@DESTROY ${name} reducer` });
+          dispatch({ type: `@DESTROY ${name as StateSchemaKey} reducer` });
         }
       });
     };

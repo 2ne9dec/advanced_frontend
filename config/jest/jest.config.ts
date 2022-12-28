@@ -6,7 +6,8 @@ export default {
     '\\\\node_modules\\\\',
   ],
   globals: {
-    IS_DEV: true,
+    __IS_DEV__: true,
+    __API__: '',
   },
   moduleDirectories: [
     'node_modules',

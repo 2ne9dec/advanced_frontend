@@ -5,7 +5,7 @@ import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 
 export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
-  const { paths, isDev } = props;
+  const { paths, isDev, apiUrl } = props;
 
   const plugins = [
     new HtmlWebpackPlugin({
@@ -17,7 +17,8 @@ export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
       chunkFilename: 'css/[name].[contenthash:8].css',
     }),
     new DefinePlugin({
-      IS_DEV: JSON.stringify(isDev),
+      __IS_DEV__: JSON.stringify(isDev),
+      __API__: JSON.stringify(apiUrl),
     }),
   ];
 

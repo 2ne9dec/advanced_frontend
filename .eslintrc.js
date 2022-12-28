@@ -30,6 +30,10 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
   },
+  globals: {
+    __IS_DEV__: true,
+    __API__: true,
+  },
   overrides: [
     {
       files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
