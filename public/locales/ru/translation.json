@@ -4,6 +4,7 @@
   "Toggle": "Toggle",
   "Main Page": "Главная",
   "About Page": "О нас",
+  "Profile Page": "Страница профиля",
   "Error": "Произошло непредвиденная ошибка!",
   "Update Page": "Обновить страницу",
   "throw error": "throw new error",
@@ -16,5 +17,6 @@
   "not-found-page": "Страница не найдена",
   "error-login-or-password": "Вы ввели неверный логин или пароль",
   "Log_Out": "Выйти",
-  "Profile Page": "Профиль"
+  "Укажите валюту": "Укажите валюту",
+  "Укажите страну": "Укажите страну"
 }

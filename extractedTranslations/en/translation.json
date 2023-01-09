@@ -1,10 +1,8 @@
 {
-  "About": "About",
+  "": "",
   "Error": "Error",
   "Log_In": "Log_In",
   "Log_Out": "Log_Out",
-  "Main": "Main",
-  "Profile Page": "Profile Page",
   "Update Page": "Update Page",
   "authorization": "authorization",
   "error-login-or-password": "error-login-or-password",
@@ -12,6 +10,12 @@
   "password": "password",
   "throw error": "throw error",
   "username": "username",
-  "Войти": "",
-  "Выйти": ""
+  "Д": "Д",
+  "Данные не указаны": "Данные не указаны",
+  "Имя и фамилия обязательны": "Имя и фамилия обязательны",
+  "Некоректный возраст": "Некоректный возраст",
+  "Некорректная страна": "Некорректная страна",
+  "Серверная ошибка при сохранении": "Серверная ошибка при сохранении",
+  "Укажите валюту": "Укажите валюту",
+  "Укажите страну": "Укажите страну"
 }

@@ -4,6 +4,7 @@
   "Toggle": "Toggle",
   "Main Page": "Main",
   "About Page": "About",
+  "Profile Page": "Profile Page",
   "Error": "Something went wrong!",
   "Update Page": "Update Page",
   "throw error": "throw new error",
@@ -16,5 +17,6 @@
   "not-found-page": "Not Found Page",
   "error-login-or-password": "Error login or password",
   "Log_Out": "Log Out",
-  "Profile Page": "Profile"
+  "Укажите валюту": "Choose currency",
+  "Укажите страну": "Choose country"
 }
