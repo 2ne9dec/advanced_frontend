@@ -4,7 +4,7 @@ import { Currency } from 'entities/Currency';
 import { getProfileData } from '../getProfileData/getProfileData';
 
 describe('getProfileData.test', () => {
-  test('should return form', () => {
+  test('should return data', () => {
     const data = {
       firstname: 'Vadim',
       lastname: 'Astapenko',
@@ -21,7 +21,7 @@ describe('getProfileData.test', () => {
     };
     expect(getProfileData(state as StateSchema)).toEqual(data);
   });
-  test('work with empty state', () => {
+  test('should work with empty state', () => {
     const state: DeepPartial<StateSchema> = {};
     expect(getProfileData(state as StateSchema)).toEqual(undefined);
   });
