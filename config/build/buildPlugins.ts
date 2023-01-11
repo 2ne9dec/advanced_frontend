@@ -1,4 +1,5 @@
 import { DefinePlugin, HotModuleReplacementPlugin, ProgressPlugin, WebpackPluginInstance } from 'webpack';
+import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
@@ -24,6 +25,7 @@ export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
   ];
 
   if (isDev) {
+    plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new HotModuleReplacementPlugin());
     plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false }));
   }
