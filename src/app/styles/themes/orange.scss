@@ -5,4 +5,11 @@ body[data-theme='orange'] {
   --colors-secondary-inverted: #faf4fb;
   --colors-bg: #faf4fb;
   --colors-bg-inverted: #bd5012;
+
+  // skeleton
+  --skeleton-color: #fff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+
+  // code
+  --code-bg: #fff;
 }

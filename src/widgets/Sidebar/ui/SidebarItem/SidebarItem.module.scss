@@ -6,12 +6,6 @@
   transition: opacity 0.3s ease 0s;
 }
 
-.link {
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .icon {
   fill: var(--colors-primary-inverted);
 }

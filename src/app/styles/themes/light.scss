@@ -5,4 +5,11 @@ body[data-theme='light'] {
   --colors-secondary-inverted: #049604;
   --colors-bg: #e8e8ea;
   --colors-bg-inverted: #090949;
+
+  // skeleton
+  --skeleton-color: #fff;
+  --skeleton-shadow: rgba(0 0 0 / 20%);
+
+  // code
+  --code-bg: #fff;
 }

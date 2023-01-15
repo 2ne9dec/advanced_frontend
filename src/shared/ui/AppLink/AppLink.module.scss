@@ -1,5 +1,9 @@
 .AppLink {
   color: var(--colors-primary);
+
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .light {
