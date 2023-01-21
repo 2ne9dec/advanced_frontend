@@ -15,6 +15,7 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
 
     try {
       const response = await extra.api.post<User>('/login', authData);
+
       if (!response.data) {
         throw new Error();
       }
@@ -23,7 +24,6 @@ export const loginByUsername = createAsyncThunk<User, LoginByUsernameProps, Thun
       dispatch(userActions.setAuthData(response.data));
       return response.data;
     } catch (e) {
-      console.log(e);
       return rejectWithValue('error');
     }
   },

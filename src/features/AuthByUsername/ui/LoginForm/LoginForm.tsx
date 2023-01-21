@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { memo, useCallback } from 'react';
 import { Text, TextTheme } from 'shared/ui/Text/Text';
 import { loginByUsername } from '../../model/services/loginByUsername/loginByUsername';
-import { loginActions, loginReducer } from '../../model/slice/loginSlice';
+import { loginActions, loginReducer } from '../../model/slices/loginSlice';
 import cls from './LoginForm.module.scss';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLoginUsername';
@@ -55,7 +55,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [dispatch, onSuccess, password, username]);
 
   return (
-    <DynamicModuleLoader reducers={initialReducers} removeAfterUnmount={true}>
+    <DynamicModuleLoader reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('authorization')} />
         {error && <Text text={t('error-login-or-password')} theme={TextTheme.ERROR} />}

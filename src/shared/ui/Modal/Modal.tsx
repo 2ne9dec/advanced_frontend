@@ -1,4 +1,4 @@
-import React, { ReactNode, useRef, useState, useCallback, useEffect, MutableRefObject } from 'react';
+import { ReactNode, useRef, useState, useCallback, useEffect, MutableRefObject, MouseEvent } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { Portal } from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
@@ -45,7 +45,7 @@ export const Modal = (props: ModalProps) => {
     [closeHandler],
   );
 
-  const onContentClick = (e: React.MouseEvent) => {
+  const onContentClick = (e: MouseEvent) => {
     e.stopPropagation();
   };
 

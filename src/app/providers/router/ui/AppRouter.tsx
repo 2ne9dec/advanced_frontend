@@ -23,7 +23,11 @@ const AppRouter = () => {
     );
   }, []);
 
-  return <Routes>{Object.values(routeConfig).map(renderWithWrapper)}</Routes>;
+  return (
+    <Routes>
+      {Object.values(routeConfig).map(renderWithWrapper)}
+    </Routes>
+  );
 };
 
 export default memo(AppRouter);
