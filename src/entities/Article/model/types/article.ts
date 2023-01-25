@@ -1,3 +1,4 @@
+import { User } from 'entities/User';
 import { ArticleBlockType, ArticleType } from '../consts/articleConsts';
 
 export interface ArticleBlockBase {
@@ -28,6 +29,7 @@ export interface Article {
   id: string;
   title: string;
   subtitle: string;
+  user: User;
   img: string;
   views: number;
   createdAt: string;

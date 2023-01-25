@@ -11,7 +11,7 @@ export const NotFoundPage = ({ className }: NotFoundPageProps) => {
 
   return (
     <div className={classNames(cls.NotFoundPage, {}, [className])}>
-      {t('not-found-page')}
+      {t('Not found page')}
     </div>
   );
 };

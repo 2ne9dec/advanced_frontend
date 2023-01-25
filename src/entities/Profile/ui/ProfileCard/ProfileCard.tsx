@@ -58,8 +58,8 @@ export const ProfileCard = (props: ProfileCardProps) => {
         <Text
           theme={TextTheme.ERROR}
           align={TextAlign.CENTER}
-          title={t('Произошла ошибка при загрузке профиля')}
-          text={t('Попробуйте обновить страницу')}
+          title={t('An error occurred while loading the profile')}
+          text={t('Try to refresh the page')}
         />
       </div>
     );
@@ -79,42 +79,42 @@ export const ProfileCard = (props: ProfileCardProps) => {
         )}  
         <Input
           value={data?.firstname}
-          placeholder={t('Ваше имя')}
+          placeholder={t('Your firstname')}
           className={cls.input}
           onChange={onChangeFirstname}
           readonly={readonly}
         />
         <Input
           value={data?.lastname}
-          placeholder={t('Ваша фамилия')}
+          placeholder={t('Your last name')}
           className={cls.input}
           onChange={onChangeLastname}
           readonly={readonly}
         />
         <Input
           value={data?.age}
-          placeholder={t('Ваш возраст')}
+          placeholder={t('Your age')}
           className={cls.input}
           onChange={onChangeAge}
           readonly={readonly}
         />
         <Input
           value={data?.city}
-          placeholder={t('Город')}
+          placeholder={t('City')}
           className={cls.input}
           onChange={onChangeCity}
           readonly={readonly}
         />
         <Input
           value={data?.username}
-          placeholder={t('Введите имя пользователя')}
+          placeholder={t('Enter your user name')}
           className={cls.input}
           onChange={onChangeUsername}
           readonly={readonly}
         />
         <Input
           value={data?.avatar}
-          placeholder={t('Введите ссылку на аватар')}
+          placeholder={t('Enter the link to the avatar')}
           className={cls.input}
           onChange={onChangeAvatar}
           readonly={readonly}

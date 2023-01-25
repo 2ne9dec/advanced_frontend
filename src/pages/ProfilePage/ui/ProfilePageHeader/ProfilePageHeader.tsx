@@ -35,7 +35,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
 
   return (
     <div className={classNames(cls.ProfilePageHeader, {}, [className])}>
-      <Text title={t('Профиль')} />
+      <Text title={t('Profile')} />
       {canEdit && (
         <>
           {readOnly ? (
@@ -44,7 +44,7 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
               className={cls.editBtn}
               onClick={onEdit}
             >
-              {t('Редактировать')}
+              {t('Edit')}
             </Button>
           ) : (
             <>
@@ -53,14 +53,14 @@ export const ProfilePageHeader = ({ className }: ProfilePageHeaderProps) => {
                 className={cls.editBtn}
                 onClick={onCancelEdit}
               >
-                {t('Отменить')}
+                {t('Cancel')}
               </Button>
               <Button
                 theme={ButtonTheme.OUTLINE}
                 className={cls.saveBtn}
                 onClick={onSaveEdit}
               >
-                {t('Сохранить')}
+                {t('Save')}
               </Button>
             </>
           )}

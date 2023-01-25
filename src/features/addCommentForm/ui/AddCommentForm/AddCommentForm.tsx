@@ -40,14 +40,14 @@ const AddCommentForm = (props: AddCommentFormProps) => {
       <div className={classNames(cls.AddCommentForm, {}, [className])}>
         <Input
           className={cls.input}
-          placeholder={t('Введите текст комментария')}
+          placeholder={t('Enter comment text')}
           value={text}
           onChange={onCommentTextChange}
         />
         <Button
           onClick={onSendHandler}
         >
-          {t('Отправить')}
+          {t('Send')}
         </Button>
       </div>
     </DynamicModuleLoader>
