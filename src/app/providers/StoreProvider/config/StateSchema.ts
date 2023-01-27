@@ -1,6 +1,6 @@
 import { AxiosInstance } from 'axios';
 import { AnyAction, CombinedState, Reducer, ReducersMapObject } from '@reduxjs/toolkit';
-import { ToolkitStore } from '@reduxjs/toolkit/dist/configureStore';
+import { EnhancedStore } from '@reduxjs/toolkit/dist/configureStore';
 import { ProfileSchema } from 'entities/Profile';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
@@ -34,7 +34,7 @@ export interface ReducerManager {
   getMountedReducers: () => MountedReducers;
 }
 
-export interface ReduxStoreWithManager extends ToolkitStore<StateSchema> {
+export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {
   reducerManager: ReducerManager;
 }
 

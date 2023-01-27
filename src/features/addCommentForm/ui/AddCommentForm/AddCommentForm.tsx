@@ -15,16 +15,16 @@ export interface AddCommentFormProps {
   onSendComment: (text: string) => void;
 }
 
+const reducers: ReducersList = {
+  addCommentForm: addCommentFormReducer,
+};
+
 const AddCommentForm = (props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
   const text = useSelector(getAddCommentFormText);
   const error = useSelector(getAddCommentFormError);
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
-
-  const reducers: ReducersList = {
-    addCommentForm: addCommentFormReducer,
-  };
 
   const onCommentTextChange = useCallback((value: string) => {
       dispatch(addCommentFormActions.setText(value));

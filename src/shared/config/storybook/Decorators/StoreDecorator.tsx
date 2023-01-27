@@ -1,4 +1,3 @@
-/* eslint-disable react/display-name */
 import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from 'app/providers/StoreProvider';
 import { profileReducer } from 'entities/Profile';
@@ -18,10 +17,12 @@ const defaultAsyncReducers: ReducersList = {
   articlesPage: articlesPageReducer,
 };
 
-export const StoreDecorator =
-  (state: DeepPartial<StateSchema>, asyncReducers?: ReducersList) => (StoryComponent: Story) =>
-    (
-      <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
-        <StoryComponent />
-      </StoreProvider>
-    );
+export const StoreDecorator = (
+  state: DeepPartial<StateSchema>,
+  asyncReducers?: ReducersList,
+// eslint-disable-next-line react/display-name
+) => (StoryComponent: Story) => (
+  <StoreProvider initialState={state} asyncReducers={{ ...defaultAsyncReducers, ...asyncReducers }}>
+    <StoryComponent />
+  </StoreProvider>
+);
