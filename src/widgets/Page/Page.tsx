@@ -3,12 +3,12 @@ import { memo, MutableRefObject, ReactNode, UIEvent, useRef } from 'react';
 import { useInfiniteScroll } from 'shared/lib/hooks/useInfiniteScroll/useInfiniteScroll';
 import cls from './Page.module.scss';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { getScrollByPath, scrollRestorationActions } from 'features/ScrollRestoration';
 import { useLocation } from 'react-router-dom';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { StateSchema } from 'app/providers/StoreProvider';
 import { useSelector } from 'react-redux';
 import { useThrottle } from 'shared/lib/hooks/useThrottle/useThrottle';
+import { getScrollByPath, scrollRestorationActions } from 'features/ScrollRestoration';
 
 interface PageProps {
   className?: string;
@@ -48,7 +48,7 @@ export const Page = memo((props: PageProps) => {
       onScroll={onScroll}
     >
       {children}
-      <div ref={triggerRef} />
+      {onScrollEnd ? <div className={cls.trigger} ref={triggerRef} /> : null}
     </section>
   );
 });
