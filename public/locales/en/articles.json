@@ -1,3 +1,16 @@
 {
-  "Articles Page": "Articles Page"
+  "Articles Page": "Articles Page",
+  "Ascending": "ascending",
+  "By": "by",
+  "Descending": "descending",
+  "Created": "creation date",
+  "Search": "Search",
+  "Sort": "Sort by",
+  "Title": "name",
+  "Views": "number of views",
+  "IT": "IT",
+  "ECONOMICS": "Economics",
+  "SCIENCE": "Science",
+  "ALL": "All articles",
+  "Articles not found": "Articles not found"
 }
