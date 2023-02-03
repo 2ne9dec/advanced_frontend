@@ -13,15 +13,41 @@ export default {
 
 const Template: ComponentStory<typeof AppLink> = (args) => <AppLink {...args} />;
 
-export const AppLinkDark = Template.bind({});
-AppLinkDark.args = {
-  children: 'Text',
-  theme: AppLinkTheme.DARK,
-};
-AppLinkDark.decorators = [ThemeDecorator(Theme.DARK)];
-
-export const AppLinkLight = Template.bind({});
-AppLinkLight.args = {
+export const Primary = Template.bind({});
+Primary.args = {
   children: 'Text',
   theme: AppLinkTheme.LIGHT,
 };
+
+export const Secondary = Template.bind({});
+Secondary.args = {
+  children: 'Text',
+  theme: AppLinkTheme.DARK,
+};
+
+export const Red = Template.bind({});
+Red.args = {
+  children: 'Text',
+  theme: AppLinkTheme.RED,
+};
+
+export const PrimaryDark = Template.bind({});
+PrimaryDark.args = {
+  children: 'Text',
+  theme: AppLinkTheme.LIGHT,
+};
+PrimaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const SecondaryDark = Template.bind({});
+SecondaryDark.args = {
+  children: 'Text',
+  theme: AppLinkTheme.DARK,
+};
+SecondaryDark.decorators = [ThemeDecorator(Theme.DARK)];
+
+export const RedDark = Template.bind({});
+RedDark.args = {
+  children: 'Text',
+  theme: AppLinkTheme.RED,
+};
+RedDark.decorators = [ThemeDecorator(Theme.DARK)];
