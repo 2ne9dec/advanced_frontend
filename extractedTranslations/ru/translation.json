@@ -1,12 +1,17 @@
 {
   "": "",
   "ALL": "ALL",
+  "Advanced Frontend": "Advanced Frontend",
+  "App": "App",
   "Articl": "Articl",
   "Article not found": "Article not found",
   "Authorization": "Authorization",
   "Choose a country": "Choose a country",
   "Choose a currency": "Choose a currency",
+  "Create article": "Create article",
+  "Create new article": "Create new article",
   "ECONOMICS": "ECONOMICS",
+  "Edit article with ID = ": "Edit article with ID = ",
   "Enter comment text": "Enter comment text",
   "Error": "Error",
   "Error login or password": "Error login or password",
@@ -22,5 +27,7 @@
   "Sort": "Sort",
   "Throw error": "Throw error",
   "Update Page": "Update Page",
-  "Username": "Username"
+  "Username": "Username",
+  "Vadim Astapenko": "Vadim Astapenko",
+  "Vadim Astapenko App": "Vadim Astapenko App"
 }

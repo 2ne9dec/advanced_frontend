@@ -2,5 +2,8 @@
   "An error occurred while loading the article": "Произошла ошибка при загрузке статьи",
   "Back to list": "Назад к списку",
   "Comments": "Комментарии",
-  "Recommends": "Рекомендуем"
+  "Recommends": "Рекомендуем",
+  "Edit": "Редактировать",
+  "Create new article": "Создание новой статьи",
+  "Edit article with ID = ": "Редактирование статьи с ID = "
 }

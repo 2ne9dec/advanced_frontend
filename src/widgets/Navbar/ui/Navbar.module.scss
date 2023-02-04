@@ -4,6 +4,14 @@
   padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   background-color: var(--colors-bg-inverted);
+}
+
+.links {
+  margin-left: auto;
+}
+
+.appName {
+  width: var(--sidebar-width);
+  margin-left: 15px;
 }
