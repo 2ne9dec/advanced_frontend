@@ -9,6 +9,8 @@ export default ({ config }: { config: Configuration }) => {
     html: '',
     entry: '',
     src: path.resolve(__dirname, '..', '..', 'src'),
+    locales: path.resolve(__dirname, '..', '..', 'public', 'locales'),
+    buildLocales: path.resolve(__dirname, '..', '..', 'build', 'locales'),
   };
 
   config!.resolve!.modules = [paths.src, 'node_modules'];
@@ -16,7 +18,8 @@ export default ({ config }: { config: Configuration }) => {
 
   config.module?.rules?.push(buildCssLoaders(true));
 
-  config?.plugins?.push(new DefinePlugin({
+  config?.plugins?.push(
+    new DefinePlugin({
       __IS_DEV__: JSON.stringify(true),
       __API__: JSON.stringify(''),
       __PROJECT__: JSON.stringify('storybook'),
