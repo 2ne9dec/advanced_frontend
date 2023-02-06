@@ -4,6 +4,11 @@ module.exports = {
     es2021: true,
     jest: true,
   },
+  settings: {
+    react: {
+      version: 'detect',
+    },
+  },
   extends: [
     'plugin:react/recommended',
     'plugin:@typescript-eslint/recommended',
@@ -25,11 +30,13 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    '2ne9dec-plugin',
     'prettier',
   ],
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
+    '2ne9dec-plugin/path-checker': 'error',
   },
   globals: {
     __IS_DEV__: true,
