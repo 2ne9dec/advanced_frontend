@@ -1,5 +1,4 @@
 .item {
-  padding: 10px;
   display: flex;
   align-items: center;
   gap: 1rem;
@@ -10,9 +9,16 @@
   fill: var(--colors-primary-inverted);
 }
 
+.link {
+  opacity: 1;
+  visibility: visible;
+  white-space: nowrap;
+}
+
 .collapsed {
   .link {
     opacity: 0;
+    visibility: hidden;
     transition: 0.2s opacity;
     width: 0;
   }

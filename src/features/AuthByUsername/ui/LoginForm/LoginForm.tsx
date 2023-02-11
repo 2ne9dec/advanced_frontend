@@ -14,6 +14,7 @@ import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLogi
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading';
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
+import { VStack } from 'shared/ui/Stack';
 
 export interface LoginFormProps {
   className?: string;
@@ -50,20 +51,18 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
 
   return (
     <DynamicModuleLoader reducers={initialReducers}>
-      <div className={classNames(cls.LoginForm, {}, [className])}>
+      <VStack max gap={'8'} className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Authorization')} />
         {error && <Text text={t('Error login or password')} theme={TextTheme.ERROR} />}
         <Input
           autofocus
           type='text'
-          className={cls.input}
           placeholder={t('Username')}
           onChange={onChangeUsername}
           value={username}
         />
         <Input
           type='text'
-          className={cls.input}
           placeholder={t('Password')}
           onChange={onChangePassword}
           value={password}
@@ -71,7 +70,7 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
         <Button theme={ButtonTheme.OUTLINE} className={cls.loginBtn} onClick={onLoginClick} disabled={isLoading}>
           {t('Log_In')}
         </Button>
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

@@ -1,5 +1,4 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import cls from './ArticleDetails.module.scss';
 import { DynamicModuleLoader, ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { articleDetailsReducer } from '../../model/slices/ArticleDetailsSlice';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
@@ -24,6 +23,8 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { ArticleBlockType } from '../../model/consts/articleConsts';
+import cls from './ArticleDetails.module.scss';
+import { HStack, VStack } from 'shared/ui/Stack';
 
 interface ArticleDetailsProps {
   className?: string;
@@ -37,11 +38,11 @@ const reducers: ReducersList = {
 const renderBlock = (block: ArticleBlock) => {
   switch (block.type) {
     case ArticleBlockType.CODE:
-      return <ArticleCodeBlockComponent key={block.id} className={cls.block} block={block} />;
+      return <ArticleCodeBlockComponent key={block.id} block={block} />;
     case ArticleBlockType.IMAGE:
-      return <ArticleImageBlockComponent key={block.id} className={cls.block} block={block} />;
+      return <ArticleImageBlockComponent key={block.id} block={block} />;
     case ArticleBlockType.TEXT:
-      return <ArticleTextBlockComponent key={block.id} className={cls.block} block={block} />;
+      return <ArticleTextBlockComponent key={block.id} block={block} />;
     default:
       return null;
   }
@@ -65,10 +66,10 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
     content = (
       <>
         <Skeleton className={cls.avatar} width={200} height={200} border='50%' />
-        <Skeleton className={cls.title} width={300} height={32} />
-        <Skeleton className={cls.skeleton} width={600} height={24} />
-        <Skeleton className={cls.skeleton} width='100%' height={200} />
-        <Skeleton className={cls.skeleton} width='100%' height={200} />
+        <Skeleton width={300} height={32} />
+        <Skeleton width={600} height={24} />
+        <Skeleton width='100%' height={200} />
+        <Skeleton width='100%' height={200} />
       </>
     );
   } else if (error) {
@@ -76,18 +77,24 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   } else {
     content = (
       <>
-        <div className={cls.avatarWrapper}>
+        <HStack max justify={'center'}>
           <Avatar size={200} src={article?.img} className={cls.avatar} />
-        </div>
-        <Text title={article?.title} text={article?.subtitle} size={TextSize.L} className={cls.title} />
-        <div className={cls.articleInfo}>
-          <Icon Svg={EyeIcon} className={cls.icon} />
-          <Text text={String(article?.views)} />
-        </div>
-        <div className={cls.articleInfo}>
-          <Icon Svg={CalendarIcon} className={cls.icon} />
-          <Text text={article?.createdAt} />
-        </div>
+        </HStack>
+        <VStack gap={'4'} max>
+          <Text
+            title={article?.title}
+            text={article?.subtitle}
+            size={TextSize.L}
+          />
+          <HStack max gap={'8'}>
+            <Icon Svg={EyeIcon}/>
+            <Text text={String(article?.views)} />
+          </HStack>
+          <HStack max gap={'8'}>
+            <Icon Svg={CalendarIcon}/>
+            <Text text={article?.createdAt} />
+          </HStack>
+        </VStack>
         {article?.blocks.map(renderBlock)}
       </>
     );
@@ -95,9 +102,9 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <div className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap={'16'} className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
-      </div>
+      </VStack>
     </DynamicModuleLoader>
   );
 });

@@ -23,6 +23,7 @@ import {
 } from 'entities/Profile';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Page } from 'widgets/Page/Page';
+import { VStack } from 'shared/ui/Stack';
 
 const reducers: ReducersList = {
   profile: profileReducer,
@@ -57,84 +58,62 @@ const ProfilePage = (props: ProfilePageProps) => {
     }
   });
 
-  const onChangeFirstname = useCallback(
-    (value?: string) => {
-      dispatch(profileActions.updateProfile({ firstname: value || '' }));
-    },
-    [dispatch],
-  );
+  const onChangeFirstname = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ firstname: value || '' }));
+  }, [dispatch]);
 
-  const onChangeLastname = useCallback(
-    (value?: string) => {
-      dispatch(profileActions.updateProfile({ lastname: value || '' }));
-    },
-    [dispatch],
-  );
+  const onChangeLastname = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ lastname: value || '' }));
+  }, [dispatch]);
 
-  const onChangeAge = useCallback(
-    (value?: string) => {
-      if (/^[0-9]*$/g.test(value || '')) {
-        dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
-      }
-    },
-    [dispatch],
-  );
+  const onChangeAge = useCallback((value?: string) => {
+    if (/^[0-9]*$/g.test(value || '')) {
+      dispatch(profileActions.updateProfile({ age: Number(value || 0) }));
+    }
+  }, [dispatch]);
 
-  const onChangeCity = useCallback(
-    (value?: string) => {
-      dispatch(profileActions.updateProfile({ city: value || '' }));
-    },
-    [dispatch],
-  );
+  const onChangeCity = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ city: value || '' }));
+  }, [dispatch]);
 
-  const onChangeUsername = useCallback(
-    (value?: string) => {
-      dispatch(profileActions.updateProfile({ username: value || '' }));
-    },
-    [dispatch],
-  );
+  const onChangeUsername = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ username: value || '' }));
+  }, [dispatch]);
 
-  const onChangeAvatar = useCallback(
-    (value?: string) => {
-      dispatch(profileActions.updateProfile({ avatar: value || '' }));
-    },
-    [dispatch],
-  );
+  const onChangeAvatar = useCallback((value?: string) => {
+    dispatch(profileActions.updateProfile({ avatar: value || '' }));
+  }, [dispatch]);
 
-  const onChangeCurrency = useCallback(
-    (currency: Currency) => {
-      dispatch(profileActions.updateProfile({ currency }));
-    },
-    [dispatch],
-  );
+  const onChangeCurrency = useCallback((currency: Currency) => {
+    dispatch(profileActions.updateProfile({ currency }));
+  }, [dispatch]);
 
-  const onChangeCountry = useCallback(
-    (country: Country) => {
-      dispatch(profileActions.updateProfile({ country }));
-    },
-    [dispatch],
-  );
+  const onChangeCountry = useCallback((country: Country) => {
+    dispatch(profileActions.updateProfile({ country }));
+  }, [dispatch]);
 
   return (
     <DynamicModuleLoader reducers={reducers}>
       <Page className={classNames('', {}, [className])}>
-        <ProfilePageHeader />
-        {validateErrors?.length &&
-          validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslate[err]} />)}
-        <ProfileCard
-          data={formData}
-          error={error}
-          isLoading={isLoading}
-          readonly={readonly}
-          onChangeFirstname={onChangeFirstname}
-          onChangeLastname={onChangeLastname}
-          onChangeAge={onChangeAge}
-          onChangeCity={onChangeCity}
-          onChangeUsername={onChangeUsername}
-          onChangeAvatar={onChangeAvatar}
-          onChangeCurrency={onChangeCurrency}
-          onChangeCountry={onChangeCountry}
-        />
+        <VStack max gap={'16'}>
+          <ProfilePageHeader />
+          {validateErrors?.length &&
+            validateErrors.map((err) => <Text key={err} theme={TextTheme.ERROR} text={validateErrorsTranslate[err]} />)}
+          <ProfileCard
+            data={formData}
+            error={error}
+            isLoading={isLoading}
+            readonly={readonly}
+            onChangeFirstname={onChangeFirstname}
+            onChangeLastname={onChangeLastname}
+            onChangeAge={onChangeAge}
+            onChangeCity={onChangeCity}
+            onChangeUsername={onChangeUsername}
+            onChangeAvatar={onChangeAvatar}
+            onChangeCurrency={onChangeCurrency}
+            onChangeCountry={onChangeCountry}
+          />
+        </VStack>
       </Page>
     </DynamicModuleLoader>
   );

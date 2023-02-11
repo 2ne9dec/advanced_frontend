@@ -1,12 +1,13 @@
 import { classNames } from 'shared/lib/classNames/classNames';
 import { memo, useMemo, useState } from 'react';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
-import cls from './Sidebar.module.scss';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import { ThemeSwitcher } from 'features/ThemeSwitcher';
 import { LangSwitcher } from 'features/LangSwitcher';
 import { useSelector } from 'react-redux';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
+import { HStack, VStack } from 'shared/ui/Stack';
+import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
   className?: string;
@@ -43,13 +44,22 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         {collapsed ? '>' : '<'}
       </Button>
-      <div className={cls.items}>
+      <VStack gap={'16'} className={cls.items}>
         {sidebarItemList}
-      </div>
-      <div className={cls.switchers}>
-        <ThemeSwitcher />
-        <LangSwitcher short={collapsed} />
-      </div>
+      </VStack>
+      {collapsed
+        ? (
+        <VStack gap={'8'} align={'center'} className={cls.switchers}>
+          <ThemeSwitcher />
+          <LangSwitcher short={collapsed} />
+        </VStack>
+      ) : (
+        <HStack justify={'center'} gap={'16'} className={cls.switchers}>
+          <ThemeSwitcher />
+          <LangSwitcher short={collapsed} />
+        </HStack>
+      )}
+      
     </menu>
   );
 });
