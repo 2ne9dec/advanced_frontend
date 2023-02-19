@@ -12,8 +12,6 @@ export interface ListBoxItem {
   disabled?: boolean;
 }
 
-
-
 interface ListBoxProps {
   className?: string;
   items?: ListBoxItem[];
