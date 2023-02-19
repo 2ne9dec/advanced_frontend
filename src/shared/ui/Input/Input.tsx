@@ -60,7 +60,7 @@ export const Input = memo((props: InputProps) => {
   };
 
   return (
-    <HStack max gap={'8'} className={classNames(cls.InputWrapper, {}, [className])}>
+    <div className={classNames(cls.InputWrapper, {}, [className])}>
       {placeholder && (
           <div className={cls.placeholder}>
             {`${placeholder}:`}
@@ -87,7 +87,7 @@ export const Input = memo((props: InputProps) => {
           />
         )}
       </div>
-    </HStack>
+    </div>
   );
 });
 

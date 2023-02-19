@@ -4,6 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { Button } from '../Button/Button';
 import { HStack } from '../Stack';
 import cls from './ListBox.module.scss';
+import { DropdownDirection } from '../../types/ui';
 
 export interface ListBoxItem {
   value: string;
@@ -11,7 +12,7 @@ export interface ListBoxItem {
   disabled?: boolean;
 }
 
-type DropdownDirection = 'top' | 'bottom';
+
 
 interface ListBoxProps {
   className?: string;
@@ -25,8 +26,10 @@ interface ListBoxProps {
 }
 
 const mapDirectionClass: Record<DropdownDirection, string> = {
-  top: cls.optionsTop,
-  bottom: cls.optionsBottom,
+  'top left': cls.optionsTopLeft,
+  'top right': cls.optionsTopRight,
+  'bottom left': cls.optionsBottomLeft,
+  'bottom right': cls.optionsBottomRight,
 }
 
 export function ListBox(props: ListBoxProps) {
@@ -37,7 +40,7 @@ export function ListBox(props: ListBoxProps) {
     defaultValue,
     onChange,
     readonly,
-    direction = 'bottom',
+    direction = 'bottom right',
     label,
   } = props;
 
@@ -54,18 +57,25 @@ export function ListBox(props: ListBoxProps) {
         disabled={readonly}
         >
         <HListBox.Button className={cls.trigger} as={'div'}>
-          <Button disabled={readonly}>{value ?? defaultValue}</Button>
+          <Button disabled={readonly}>
+            {value ?? defaultValue}
+          </Button>
         </HListBox.Button>
         <HListBox.Options className={classNames(cls.options, {}, optionsClasses)}>
           {items?.map((item) => (
             <HListBox.Option
-              value={item.value}
               key={item.value}
+              value={item.value}
               as={Fragment}
               disabled={item.disabled}
             >
               {({ active, selected }) => (
-                <li className={classNames(cls.item, { [cls.active]: active, [cls.disabled]: item.disabled })}>
+                <li className={classNames(
+                  cls.item, {
+                    [cls.active]: active,
+                    [cls.disabled]: item.disabled
+                  })}
+                >
                   {selected && '!!!'}
                   {item.content}
                 </li>

@@ -32,17 +32,18 @@ export const Tabs = memo((props: TabsProps) => {
   }, [onTabClick]);
 
   return (
-    <HStack gap={'8'} className={classNames(cls.Tabs, {}, [className])}>
+    <div className={classNames(cls.Tabs, {}, [className])}>
       {tabs.map((tab) => (
         <Card
           key={tab.value}
+          className={cls.tab}
           onClick={clickHandler(tab)}
           theme={tab.value === value ? CardTheme.NORMAL : CardTheme.OUTLINED}
         >
           {tab.content}
         </Card>
       ))}
-    </HStack>
+    </div>
   );
 });
 
