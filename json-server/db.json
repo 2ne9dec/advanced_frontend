@@ -607,6 +607,30 @@
       "userId": "1",
       "text": "comment",
       "id": 3
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "test!",
+      "id": 4
+    },
+    {
+      "articleId": "19",
+      "userId": "1",
+      "text": "asdasd",
+      "id": 5
+    },
+    {
+      "articleId": "5",
+      "userId": "1",
+      "text": "3",
+      "id": 6
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123123",
+      "id": 7
     }
   ],
   "users": [

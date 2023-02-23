@@ -10,6 +10,7 @@
   "Incorrect user data": "Имя и фамилия обязательны",
   "No data": "Данные не указаны",
   "Profile": "Профиль",
+  "Profile not found": "Профиль не найден",
   "Save": "Сохранить",
   "Server error": "Серверная ошибка при сохранении",
   "Try to refresh the page": "Попробуйте обновить страницу",

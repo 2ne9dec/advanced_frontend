@@ -64,13 +64,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   if (isLoading) {
     content = (
-      <>
+      <VStack max gap={'16'}>
         <Skeleton className={cls.avatar} width={200} height={200} border='50%' />
         <Skeleton width={300} height={32} />
         <Skeleton width={600} height={24} />
         <Skeleton width='100%' height={200} />
         <Skeleton width='100%' height={200} />
-      </>
+      </VStack>
     );
   } else if (error) {
     content = <Text align={TextAlign.CENTER} title={t('An error occurred while loading the article')} />;
@@ -102,7 +102,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers}>
-      <VStack gap={'16'} className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack gap={'16'} max className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>

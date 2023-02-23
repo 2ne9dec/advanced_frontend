@@ -4,10 +4,12 @@
   "Advanced Frontend": "Advanced Frontend",
   "App": "",
   "Articl": "Articl",
+  "Article": "Article",
   "Article not found": "Article not found",
   "Authorization": "Authorization",
   "Choose a country": "Choose a country",
   "Choose a currency": "Choose a currency",
+  "Comments": "Comments",
   "Create article": "Create article",
   "Create new article": "Create new article",
   "ECONOMICS": "",
@@ -23,6 +25,7 @@
   "Password": "Password",
   "Profile": "Profile",
   "Read more": "Read more",
+  "Recommends": "Recommends",
   "SCIENCE": "",
   "Send": "Send",
   "Sort": "Sort",
@@ -30,5 +33,6 @@
   "Update Page": "Update Page",
   "Username": "Username",
   "Vadim Astapenko": "Vadim Astapenko",
-  "Vadim Astapenko App": "Vadim Astapenko App"
+  "Vadim Astapenko App": "Vadim Astapenko App",
+  "Статья не найдена": "Статья не найдена"
 }

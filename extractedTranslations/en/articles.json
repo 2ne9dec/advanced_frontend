@@ -8,11 +8,13 @@
   "Created": "Created",
   "Descending": "Descending",
   "ECONOMICS": "",
+  "Error loading articles": "Error loading articles",
   "IT": "",
   "Read more": "",
   "SCIENCE": "",
   "Search": "Search",
   "Sort": "Sort",
   "Title": "Title",
-  "Views": "Views"
+  "Views": "Views",
+  "Ошибка при загрузке статей": "Ошибка при загрузке статей"
 }
