@@ -12,13 +12,14 @@
 }
 
 .menu {
-  background: var(--colors-bg);
+  width: 150px;
   position: absolute;
-  z-index: 10000;
-  border-radius: 8px;
-  border: 1px solid var(--colors-primary);
   display: flex;
   flex-direction: column;
+  background: var(--colors-bg);
+  border-radius: 8px;
+  border: 1px solid var(--colors-primary);
+  z-index: 10000;
 }
 
 .item {

@@ -1,10 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Theme } from 'app/providers/ThemeProvider';
-import { ThemeDecorator } from 'shared/config/storybook';
+import { StoreDecorator } from 'shared/config/storybook';
 import MainPage from './MainPage';
 
 export default {
-  title: 'pages/MainPage/MainPage',
+  title: 'pages/MainPage',
   component: MainPage,
   argTypes: {
     backgroundColor: { control: 'color' },
@@ -15,7 +14,4 @@ const Template: ComponentStory<typeof MainPage> = () => <MainPage />;
 
 export const Light = Template.bind({});
 Light.args = {};
-
-export const Dark = Template.bind({});
-Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Light.decorators = [StoreDecorator({})];

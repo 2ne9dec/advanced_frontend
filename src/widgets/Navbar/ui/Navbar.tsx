@@ -1,4 +1,4 @@
-import { getUserAuthData, userActions } from 'entities/User';
+import { getUserAuthData, isUserAdmin, isUserManager, userActions } from 'entities/User';
 import { LoginModal } from 'features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -22,6 +22,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
   const dispatch = useAppDispatch();
+  const isAdmin = useSelector(isUserAdmin);
+  const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -35,6 +37,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     dispatch(userActions.logout());
   }, [dispatch]);
 
+  const isAdminPanelAvailable = isAdmin || isManager;
+
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
@@ -47,7 +51,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           to={RoutePath.article_create}
           theme={AppLinkTheme.DARK}
           className={cls.createBtn}
-          >
+        >
           {t('Create article')}
         </AppLink>
         <Dropdown
@@ -55,6 +59,14 @@ export const Navbar = memo(({ className }: NavbarProps) => {
           className={cls.dropdown}
           trigger={<Avatar size={30} src={authData.avatar} />}
           items={[
+            ...(isAdminPanelAvailable
+              ? [
+                  {
+                    content: t('Admin Panel'),
+                    href: RoutePath.admin_panel,
+                  },
+                ]
+              : []),
             {
               content: t('Profile'),
               href: RoutePath.profile + authData.id,
@@ -63,7 +75,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
               content: t('Log_Out'),
               onClick: onLogout,
             },
-          ]} 
+          ]}
         />
       </header>
     );
