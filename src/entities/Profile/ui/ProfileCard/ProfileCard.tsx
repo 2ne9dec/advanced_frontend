@@ -82,46 +82,54 @@ export const ProfileCard = (props: ProfileCardProps) => {
         placeholder={t('Your firstname')}
         onChange={onChangeFirstname}
         readonly={readonly}
+        data-testid={'ProfileCard.Firstname'}
       />
       <Input
         value={data?.lastname}
         placeholder={t('Your last name')}
         onChange={onChangeLastname}
         readonly={readonly}
+        data-testid={'ProfileCard.Lastname'}
       />
       <Input
         value={data?.age}
         placeholder={t('Your age')}
         onChange={onChangeAge}
         readonly={readonly}
+        data-testid={'ProfileCard.Age'}
       />
       <Input
         value={data?.city}
         placeholder={t('City')}
         onChange={onChangeCity}
         readonly={readonly}
+        data-testid={'ProfileCard.City'}
       />
       <Input
         value={data?.username}
         placeholder={t('Enter your user name')}
         onChange={onChangeUsername}
         readonly={readonly}
+        data-testid={'ProfileCard.Username'}
       />
       <Input
         value={data?.avatar}
         placeholder={t('Enter the link to the avatar')}
         onChange={onChangeAvatar}
         readonly={readonly}
+        data-testid={'ProfileCard.Avatar'}
       />
       <CurrencySelect
         value={data?.currency}
         onChange={onChangeCurrency}
         readonly={readonly}
+        data-testid={'ProfileCard.Currency'}
       />
       <CountrySelect
         value={data?.country}
         onChange={onChangeCountry}
         readonly={readonly}
+        data-testid={'ProfileCard.Country'}
       />
     </VStack>
   );

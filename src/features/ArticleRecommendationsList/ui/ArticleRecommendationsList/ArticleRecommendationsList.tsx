@@ -16,14 +16,21 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
   const { isLoading, data: articles, error } = useArticleRecommendationsList(3);
 
   // ПЕРЕДЕЛАТЬ!!!!!
-  if (isLoading || error) {
+  if (isLoading || error || !articles) {
     return null;
   }
 
   return (
     <VStack gap={'8'} className={classNames('', {}, [className])}>
-      <Text size={TextSize.L} title={t('Recommends')} />
-      <ArticleList articles={articles} target='_blank' />
+      <Text
+        size={TextSize.L}
+        title={t('Recommends')}
+      />
+      <ArticleList
+        articles={articles}
+        target='_blank'
+        virtualized={false}
+      />
     </VStack>
   );
 });

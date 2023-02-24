@@ -14,6 +14,7 @@ interface ArticleListProps {
   isLoading?: boolean;
   view?: ArticleView;
   target?: HTMLAttributeAnchorTarget;
+  virtualized?: boolean;
 }
 
 const getSkeletons = (view: ArticleView) =>
@@ -28,6 +29,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     view = ArticleView.TILE,
     isLoading,
     target,
+    virtualized = true,
   } = props;
 
   const { t } = useTranslation('articles');
@@ -51,6 +53,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     );
   }
 
+  // ! Сделать виртуальные списки по 63 уроку и в 72 исправляется баг
   return (
     <div className={classNames(cls.ArticleList, {}, [className, cls[view]])}>
       {articles.length > 0 ? articles.map(renderArticle) : null}
