@@ -4,6 +4,7 @@ import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import { fetchProfileData } from './fetchProfileData';
 
 const data = {
+  id: '1',
   firstname: 'Vadim',
   lastname: 'Astapenko',
   age: 33,
