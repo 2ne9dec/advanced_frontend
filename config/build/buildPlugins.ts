@@ -5,6 +5,7 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import { BuildOptions } from './types/config';
 import CopyPlugin from 'copy-webpack-plugin';
+import CircularDependencyPlugin from 'circular-dependency-plugin';
 
 export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
   const { paths, isDev, apiUrl, project } = props;
@@ -26,14 +27,20 @@ export function buildPlugins(props: BuildOptions): WebpackPluginInstance[] {
     new CopyPlugin({
       patterns: [{ from: paths.locales, to: paths.buildLocales }],
     }),
+    new CircularDependencyPlugin({
+      exclude: /node_modules/,
+      failOnError: true,
+    }),
   ];
 
   if (isDev) {
     plugins.push(new ReactRefreshWebpackPlugin());
     plugins.push(new HotModuleReplacementPlugin());
-    plugins.push(new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    }));
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }),
+    );
   }
 
   return plugins;
