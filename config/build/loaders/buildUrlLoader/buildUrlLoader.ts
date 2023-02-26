@@ -1,4 +1,4 @@
-export const buildUrlLoaders = () => {
+export const buildUrlLoader = () => {
   return {
     test: /\.(png|jpg|gif)$/i,
     use: [

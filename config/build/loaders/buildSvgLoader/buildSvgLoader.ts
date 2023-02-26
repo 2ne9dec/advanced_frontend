@@ -1,4 +1,4 @@
-export const buildSvgLoaders = () => {
+export const buildSvgLoader = () => {
   return {
     test: /\.svg$/,
     use: ['@svgr/webpack'],

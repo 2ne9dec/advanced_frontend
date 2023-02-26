@@ -1,6 +1,6 @@
 import path from 'path';
 import { Configuration, DefinePlugin } from 'webpack';
-import { buildCssLoaders } from '../build/loaders/buildCssLoaders/buildCssLoaders';
+import { buildCssLoader } from '../build/loaders/buildCssLoader/buildCssLoader';
 import { BuildPaths } from '../build/types/config';
 
 export default ({ config }: { config: Configuration }) => {
@@ -16,7 +16,7 @@ export default ({ config }: { config: Configuration }) => {
   config!.resolve!.modules = [paths.src, 'node_modules'];
   config.resolve?.extensions?.push('.ts', '.tsx');
 
-  config.module?.rules?.push(buildCssLoaders(true));
+  config.module?.rules?.push(buildCssLoader(true));
 
   config?.plugins?.push(
     new DefinePlugin({

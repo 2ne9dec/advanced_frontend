@@ -1,13 +1,6 @@
-import { buildCssLoaders } from './buildCssLoaders/buildCssLoaders';
-import { buildBabelLoaders } from './buildBabelLoaders/buildBabelLoaders';
-import { buildSvgLoaders } from './buildSvgLoaders/buildSvgLoaders';
-import { buildTypescriptLoaders } from './buildTypescriptLoaders/buildTypescriptLoaders';
-import { buildUrlLoaders } from './buildUrlLoaders/buildUrlLoaders';
+import { buildCssLoader } from './buildCssLoader/buildCssLoader';
+import { buildBabelLoader } from './buildBabelLoader/buildBabelLoader';
+import { buildSvgLoader } from './buildSvgLoader/buildSvgLoader';
+import { buildUrlLoader } from './buildUrlLoader/buildUrlLoader';
 
-export {
-  buildBabelLoaders,
-  buildCssLoaders,
-  buildSvgLoaders,
-  buildTypescriptLoaders,
-  buildUrlLoaders,
-};
+export { buildBabelLoader, buildCssLoader, buildSvgLoader, buildUrlLoader };
