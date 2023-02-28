@@ -1,0 +1,33 @@
+.notifications {
+  padding: 10px;
+  min-height: 150px;
+  max-height: 300px;
+  width: 500px;
+  overflow-y: auto;
+}
+
+.notification {
+  cursor: pointer;
+
+  &:hover {
+    animation: shake 0.25s;
+
+    @keyframes shake {
+      0% {
+        transform: rotate(15deg);
+      }
+
+      25% {
+        transform: rotate(-15deg);
+      }
+
+      75% {
+        transform: rotate(15deg);
+      }
+
+      100% {
+        transform: rotate(0deg);
+      }
+    }
+  }
+}

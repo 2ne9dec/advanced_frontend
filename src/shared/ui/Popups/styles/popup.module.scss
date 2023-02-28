@@ -1,8 +1,8 @@
-.Dropdown {
+.popup {
   position: relative;
 }
 
-.btn {
+.trigger {
   background: none;
   outline: none;
   margin: 0;
@@ -11,28 +11,9 @@
   cursor: pointer;
 }
 
-.menu {
-  width: 150px;
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  background: var(--colors-bg);
-  border-radius: 8px;
-  border: 1px solid var(--colors-primary);
-  z-index: 10000;
-}
-
-.item {
-  padding: 10px 25px;
-  width: 100%;
-  border: none;
-  background: none;
-  outline: none;
-  color: var(--colors-primary);
-  cursor: pointer;
-}
-
 .active {
+  background: var(--colors-primary-inverted);
+
   &:first-child {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
@@ -42,8 +23,6 @@
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
   }
-
-  background: var(--colors-primary-inverted);
 }
 
 .menuTopLeft {
@@ -64,4 +43,8 @@
 .menuBottomRight {
   top: 100%;
   left: 0;
+}
+
+.disabled {
+  opacity: 0.7;
 }
