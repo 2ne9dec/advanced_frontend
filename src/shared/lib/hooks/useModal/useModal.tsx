@@ -7,11 +7,7 @@ interface UseModalProps {
 }
 
 export const useModal = (props: UseModalProps) => {
-  const {
-    isOpen,
-    onClose,
-    animationDelay,
-  } = props;
+  const { isOpen, onClose, animationDelay } = props;
   const [isClosing, setIsClosing] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>;
@@ -26,11 +22,14 @@ export const useModal = (props: UseModalProps) => {
     }
   }, [animationDelay, onClose]);
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      close();
-    }
-  }, [close]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        close();
+      }
+    },
+    [close],
+  );
 
   useEffect(() => {
     if (isOpen) {

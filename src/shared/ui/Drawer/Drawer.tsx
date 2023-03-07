@@ -17,7 +17,11 @@ interface DrawerProps {
 export const Drawer = (props: DrawerProps) => {
   const { className, children, isOpen, onClose, lazy } = props;
   const { theme } = useTheme();
-  const { close, isClosing, isMounted } = useModal({ animationDelay: 300, onClose, isOpen });
+  const { close, isClosing, isMounted } = useModal({
+    animationDelay: 300,
+    onClose,
+    isOpen,
+  });
 
   const mods: Mods = {
     [cls.opened]: isOpen,
