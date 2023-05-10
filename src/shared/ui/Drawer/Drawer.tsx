@@ -2,7 +2,7 @@ import { Portal } from '@headlessui/react';
 import { useTheme } from '@/app/providers/ThemeProvider';
 import { ReactNode, memo, useEffect, useCallback } from 'react';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
+import { AnimationProvider, useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 
@@ -87,7 +87,7 @@ export const DrawerContent = memo((props: DrawerProps) => {
 
 DrawerContent.displayName = 'DrawerContent';
 
-export const Drawer = memo((props: DrawerProps) => {
+const DrawerAsync = (props: DrawerProps) => {
   const { isLoaded } = useAnimationLibs();
 
   if (!isLoaded) {
@@ -95,6 +95,12 @@ export const Drawer = memo((props: DrawerProps) => {
   }
 
   return <DrawerContent {...props} />;
-});
+};
 
-Drawer.displayName = 'Drawer';
+export const Drawer = (props: DrawerProps) => {
+  return (
+    <AnimationProvider>
+      <DrawerAsync {...props} />
+    </AnimationProvider>
+  );
+};
