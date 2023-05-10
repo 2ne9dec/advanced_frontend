@@ -14,7 +14,7 @@
 }
 
 .content {
-  z-index: 10000;
+  z-index: var(--z-index-modal);
   padding: 20px;
   border-radius: 12px;
   background: var(--colors-bg);

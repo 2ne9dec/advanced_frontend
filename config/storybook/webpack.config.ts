@@ -15,6 +15,7 @@ export default ({ config }: { config: Configuration }) => {
 
   config!.resolve!.modules = [paths.src, 'node_modules'];
   config.resolve?.extensions?.push('.ts', '.tsx');
+  config.resolve!.alias = { '@': paths.src };
 
   config.module?.rules?.push(buildCssLoader(true));
 

@@ -1,8 +1,8 @@
 import { Portal } from '@headlessui/react';
-import { useTheme } from 'app/providers/ThemeProvider';
+import { useTheme } from '@/app/providers/ThemeProvider';
 import { ReactNode, memo, useEffect, useCallback } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAnimationLibs } from 'shared/lib/components/AnimationProvider';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAnimationLibs } from '@/shared/lib/components/AnimationProvider';
 import { Overlay } from '../Overlay/Overlay';
 import cls from './Drawer.module.scss';
 

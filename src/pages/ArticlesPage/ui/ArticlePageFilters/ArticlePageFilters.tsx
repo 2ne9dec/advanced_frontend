@@ -1,11 +1,11 @@
 import { memo, useCallback } from 'react';
 import { useSelector } from 'react-redux';
 import { useTranslation } from 'react-i18next';
-import { SortOrder } from 'shared/types';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { SortOrder } from '@/shared/types';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { articlesPageActions } from '../../model/slices/articlesPageSlice';
 import {
   getArticlesPageOrder,
@@ -16,12 +16,12 @@ import {
 } from '../../model/selectors/articlesPageSelectors';
 import cls from './ArticlePageFilters.module.scss';
 import { fetchArticlesList } from '../../model/services/fetchArticlesList/fetchArticlesList';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { ArticleSortField, ArticleType, ArticleView } from 'entities/Article';
-import { ArticleSortSelector } from 'features/ArticleSortSelector';
-import { ArticleViewSelector } from 'features/ArticleViewSelector';
-import { ArticleTypeTabs } from 'features/ArticleTypeTabs';
-import { HStack, VStack } from 'shared/ui/Stack';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { ArticleSortField, ArticleType, ArticleView } from '@/entities/Article';
+import { ArticleSortSelector } from '@/features/ArticleSortSelector';
+import { ArticleViewSelector } from '@/features/ArticleViewSelector';
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
+import { HStack, VStack } from '@/shared/ui/Stack';
 
 interface ArticlePageFiltersProps {
   className?: string;

@@ -1,8 +1,8 @@
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames } from '@/shared/lib/classNames/classNames';
 import { memo } from 'react';
 import { ArticleTextBlock } from '../../model/types/article';
-import { Text } from 'shared/ui/Text/Text';
-import { VStack } from 'shared/ui/Stack';
+import { Text } from '@/shared/ui/Text/Text';
+import { VStack } from '@/shared/ui/Stack';
 
 interface ArticleTextBlockComponentProps {
   className?: string;
