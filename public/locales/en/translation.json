@@ -16,7 +16,6 @@
   "Not found page": "Not Found Page",
   "Profile": "Profile",
   "Profile Page": "Profile",
-  "Send": "Отправить",
   "Short_Language": "En",
   "Throw error": "throw new error",
   "Translate": "Translate",
@@ -24,5 +23,8 @@
   "Password": "Password",
   "Username": "Username",
   "Advanced Frontend": "Advanced Frontend",
-  "Create article": "Create article"
+  "Create article": "Create article",
+  "Feedback": "Feedback",
+  "Close": "Close",
+  "Send": "Send"
 }
