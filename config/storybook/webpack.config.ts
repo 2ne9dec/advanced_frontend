@@ -13,9 +13,12 @@ export default ({ config }: { config: Configuration }) => {
     buildLocales: path.resolve(__dirname, '..', '..', 'build', 'locales'),
   };
 
-  config!.resolve!.modules = [paths.src, 'node_modules'];
-  config.resolve?.extensions?.push('.ts', '.tsx');
-  config.resolve!.alias = { '@': paths.src };
+  config!.resolve!.modules!.push(paths.src);
+  config!.resolve!.extensions!.push('.ts', '.tsx');
+  config.resolve!.alias = {
+    ...config!.resolve!.alias,
+    '@': paths.src,
+  };
 
   config.module?.rules?.push(buildCssLoader(true));
 
