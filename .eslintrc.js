@@ -37,7 +37,13 @@ module.exports = {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '2ne9dec-plugin/path-checker': ['error', {alias: '@'}],
-    '2ne9dec-plugin/public-api-imports': ['error', {alias: '@'}],
+    '2ne9dec-plugin/public-api-imports': [
+      'error',
+      {
+        alias: '@',
+        testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      },
+    ],
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
