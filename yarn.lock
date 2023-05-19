@@ -7358,10 +7358,10 @@ eslint-module-utils@^2.7.4:
   dependencies:
     debug "^3.2.7"
 
-eslint-plugin-2ne9dec-plugin@^0.0.3:
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-2ne9dec-plugin/-/eslint-plugin-2ne9dec-plugin-0.0.3.tgz#d13430daa95f02cd5fdc2fecd72f5b12f9c1fcb9"
-  integrity sha512-aYh9mI/SN0MGWG5u3dZ/CiSTEMiYOXHqGDLDqhKcSQbA4jB/9O8LbwE8TMk68iRvWiBghSA3aN2o9GFI8J2ElQ==
+eslint-plugin-2ne9dec-plugin@0.0.4:
+  version "0.0.4"
+  resolved "https://registry.yarnpkg.com/eslint-plugin-2ne9dec-plugin/-/eslint-plugin-2ne9dec-plugin-0.0.4.tgz#53c797902f2e019a1ff58813cf3c2fb85d4ce0c6"
+  integrity sha512-R9EHAmqGVQFa9m1w49mdqc1k+Y0ucorFuWtxbDxliD4xgNdFbL9fJ+cDwOnhrxLgROAGOGyV6XZZkAvsEqjc/g==
   dependencies:
     requireindex "^1.2.0"
 
