@@ -671,6 +671,12 @@
       "userId": "1",
       "text": "asdasdsad",
       "id": 8
+    },
+    {
+      "articleId": "1",
+      "userId": "1",
+      "text": "123",
+      "id": 9
     }
   ],
   "users": [
@@ -708,7 +714,7 @@
       "firstname": "Vadim",
       "lastname": "Astapenko",
       "age": 33,
-      "currency": "USD",
+      "currency": "EUR",
       "country": "Belarus",
       "city": "Zhlobin",
       "username": "Davion",

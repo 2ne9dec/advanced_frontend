@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { getArticleDetailsData } from '@/entities/Article';
@@ -30,17 +30,11 @@ export const ArticleDetailPageHeader = memo((props: ArticleDetailPageHeaderProps
 
   return (
     <HStack justify={'between'} max className={classNames('', {}, [className])}>
-      <Button
-        theme={ButtonTheme.OUTLINE}
-        onClick={onBackToList}
-      >
+      <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
         {t('Back to list')}
       </Button>
       {canEdit && (
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          onClick={onEditArticle}
-        >
+        <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
           {t('Edit')}
         </Button>
       )}

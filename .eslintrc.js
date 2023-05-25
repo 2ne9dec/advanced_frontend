@@ -36,12 +36,19 @@ module.exports = {
   rules: {
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
-    '2ne9dec-plugin/path-checker': ['error', {alias: '@'}],
+    '2ne9dec-plugin/path-checker': ['error', { alias: '@' }],
     '2ne9dec-plugin/public-api-imports': [
       'error',
       {
         alias: '@',
         testFilesPatterns: ['**/*.test.*', '**/*.story.*', '**/StoreDecorator.tsx'],
+      },
+    ],
+    '2ne9dec-plugin/layer-imports': [
+      'error',
+      {
+        alias: '@',
+        ignoreImportPatterns: ['**/StoreProvider', '**/testing'],
       },
     ],
     '@typescript-eslint/no-explicit-any': 'off',

@@ -3,7 +3,7 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button';
@@ -33,16 +33,8 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   if (authData) {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
-        <Text
-          className={cls.appName}
-          title={t('Advanced Frontend')}
-          theme={TextTheme.INVERTED}
-        />
-        <AppLink
-          to={RoutePath.article_create}
-          theme={AppLinkTheme.DARK}
-          className={cls.createBtn}
-        >
+        <Text className={cls.appName} title={t('Advanced Frontend')} theme={TextTheme.INVERTED} />
+        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.DARK} className={cls.createBtn}>
           {t('Create article')}
         </AppLink>
         <HStack gap={'16'} className={cls.actions}>
@@ -55,11 +47,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   return (
     <header className={classNames(cls.Navbar, {}, [className])}>
-      <Button
-        theme={ButtonTheme.CLEAR_INVERTED}
-        className={cls.links}
-        onClick={onShowModal}
-      >
+      <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onShowModal}>
         {t('Log_In')}
       </Button>
       {isAuthModal && <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />}

@@ -1,6 +1,8 @@
+// eslint-disable-next-line 2ne9dec-plugin/layer-imports
+import { Currency } from '@/entities/Currency';
 import { action } from '@storybook/addon-actions';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { Currency } from '@/entities/Currency';
+
 import { ListBox } from './ListBox';
 
 export default {
