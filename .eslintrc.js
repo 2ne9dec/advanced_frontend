@@ -31,6 +31,7 @@ module.exports = {
     'i18next',
     'react-hooks',
     '2ne9dec-plugin',
+    'unused-imports',
     'prettier',
   ],
   rules: {
@@ -54,6 +55,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
     '@typescript-eslint/no-unused-vars': 'off',
+    'unused-imports/no-unused-imports': 'error',
   },
   globals: {
     __IS_DEV__: true,
