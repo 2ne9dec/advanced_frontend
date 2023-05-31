@@ -1,5 +1,5 @@
 import { addDecorator } from '@storybook/react';
-import { StyleDecorator, RouterDecorator, SuspenseDecorator } from '../../src/shared/config/storybook';
+import { StyleDecorator, RouterDecorator, SuspenseDecorator, ThemeDecorator } from '../../src/shared/config/storybook';
 import { Theme } from '@/shared/const/theme';
 
 export const parameters = {
@@ -14,13 +14,14 @@ export const parameters = {
   themes: {
     default: 'light',
     list: [
-      { name: 'light', class: ['app', Theme.LIGHT], color: '#ffffff' },
-      { name: 'dark', class: ['app',Theme.DARK], color: '#000000' },
-      { name: 'orange', class: ['app',Theme.ORANGE], color: '#ffb005' },
+      { name: 'light', class: Theme.LIGHT, color: '#ffffff' },
+      { name: 'dark', class: Theme.DARK, color: '#000000' },
+      { name: 'orange', class: Theme.ORANGE, color: '#ffb005' },
     ],
   },
 };
 
 addDecorator(StyleDecorator);
+addDecorator(ThemeDecorator(Theme.LIGHT));
 addDecorator(RouterDecorator);
 addDecorator(SuspenseDecorator);

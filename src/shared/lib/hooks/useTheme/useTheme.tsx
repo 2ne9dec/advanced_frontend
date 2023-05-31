@@ -1,4 +1,4 @@
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { ThemeContext } from '../../context/ThemeContext';
 import { Theme } from '../../../const/theme';
 import { LOCALSTORAGE_THEME_KEY } from '../../../const/localstorage';
@@ -10,6 +10,12 @@ interface UseThemeResult {
 
 export function useTheme(): UseThemeResult {
   const { theme, setTheme } = useContext(ThemeContext);
+
+  useEffect(() => {
+    if (theme) {
+      document.body.setAttribute('data-theme', theme);
+    }
+  }, [theme]);
 
   const toggleTheme = () => {
     let newTheme: Theme;

@@ -6,10 +6,8 @@ import { getUserInited, userActions } from '@/entities/User';
 import { AppRouter } from './providers/router';
 import { useSelector } from 'react-redux';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 const App = () => {
-  const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
 
@@ -18,7 +16,7 @@ const App = () => {
   }, [dispatch]);
 
   return (
-    <div className={classNames('app', {}, [theme])}>
+    <div className={classNames('app', {}, [])}>
       <Suspense fallback=''>
         <Navbar />
         <div className='content-page'>
