@@ -677,6 +677,12 @@
       "userId": "1",
       "text": "123",
       "id": 9
+    },
+    {
+      "articleId": "18",
+      "userId": "1",
+      "text": "123",
+      "id": 10
     }
   ],
   "users": [
@@ -765,6 +771,12 @@
       "rate": 4,
       "userId": "1",
       "id": "Qb-Q26L"
+    },
+    {
+      "articleId": "18",
+      "rate": 2,
+      "userId": "1",
+      "id": "VmpA1PN"
     }
   ],
   "profile-ratings": [

@@ -3,7 +3,6 @@ import { LoginModal } from '@/features/AuthByUsername';
 import { memo, useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
-import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
@@ -11,6 +10,7 @@ import { HStack } from '@/shared/ui/Stack';
 import { Text, TextTheme } from '@/shared/ui/Text';
 import { NotificationButton } from '@/features/NotificationButton';
 import { AvatarDropdown } from '@/features/AvatarDropdown';
+import { getRouteArticleCreate } from '@/shared/const/router';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -34,7 +34,7 @@ export const Navbar = memo(({ className }: NavbarProps) => {
     return (
       <header className={classNames(cls.Navbar, {}, [className])}>
         <Text className={cls.appName} title={t('Advanced Frontend')} theme={TextTheme.INVERTED} />
-        <AppLink to={RoutePath.article_create} theme={AppLinkTheme.DARK} className={cls.createBtn}>
+        <AppLink to={getRouteArticleCreate()} theme={AppLinkTheme.DARK} className={cls.createBtn}>
           {t('Create article')}
         </AppLink>
         <HStack gap={'16'} className={cls.actions}>
