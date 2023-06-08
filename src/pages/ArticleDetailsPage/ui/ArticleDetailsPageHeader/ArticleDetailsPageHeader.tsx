@@ -5,9 +5,9 @@ import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { getRouteArticleEdit, getRouteArticles } from '@/shared/const/router';
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { HStack } from '@/shared/ui/Stack';
 import { getArticleDetailsData } from '@/entities/Article';
 import { getCanEditArticle } from '../../model/selectors/article';
-import { HStack } from '@/shared/ui/Stack';
 
 interface ArticleDetailPageHeaderProps {
   className?: string;
