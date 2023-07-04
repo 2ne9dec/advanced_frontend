@@ -8,11 +8,13 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { getRouteArticleDetails } from '@/shared/const/router';
-import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import { Article, ArticleTextBlock } from '../../model/types/article';
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { AppImage } from '@/shared/ui/AppImage';
+import EyeIcon from '@/shared/assets/icons/eye-20-20.svg';
 import cls from './ArticleListItem.module.scss';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 interface ArticleListItemProps {
   className?: string;
@@ -22,7 +24,12 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const { className, article, view, target } = props;
+  const {
+    className,
+    article,
+    view,
+    target,
+  } = props;
   const { t } = useTranslation('articles');
 
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -46,11 +53,18 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
           </div>
           <Text title={article.title} className={cls.title} />
           {types}
-          <img src={article.img} alt={article.title} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={'100%'} height={250} />}
+            src={article.img}
+            alt={article.title}
+            className={cls.img}
+          />
           {textBlock && <ArticleTextBlockComponent block={textBlock} className={cls.textBlock} />}
           <div className={cls.footer}>
             <AppLink target={target} to={getRouteArticleDetails(article.id)}>
-              <Button theme={ButtonTheme.OUTLINE}>{t('Read more')}</Button>
+              <Button theme={ButtonTheme.OUTLINE}>
+                {t('Read more')}
+              </Button>
             </AppLink>
             {views}
           </div>
@@ -67,7 +81,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <img alt={article.title} src={article.img} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            alt={article.title}
+            src={article.img}
+            className={cls.img}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>
