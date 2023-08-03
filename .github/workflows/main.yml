@@ -43,9 +43,9 @@
 name: linting, testing, building
 on:
   push:
-    branches: [ main ]
+    branches: [ master ]
   pull_request:
-    branches: [ main ]
+    branches: [ master ]
 permissions:
   contents: write
   pages: write
@@ -55,14 +55,14 @@ concurrency:
   cancel-in-progress: true
 jobs:
   build-and-ui-testing:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     concurrency: ci-${{ github.ref }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -70,7 +70,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: yarn ci
+        run: yarn install
       - name: build production project
         run: yarn build:prod
         if: always()
@@ -97,10 +97,10 @@ jobs:
         uses: actions/deploy-pages@v1
 
   checks:
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 16.x ]
+        node-version: [ 18.x ]
     steps:
       - uses: actions/checkout@v2
       - name: Staring Node.js ${{ matrix.node-version }}
@@ -108,7 +108,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: yarn ci
+        run: yarn install
       - name: linting typescript
         run: yarn lint:ts
         if: always()
