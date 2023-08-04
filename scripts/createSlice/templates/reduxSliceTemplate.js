@@ -1,6 +1,6 @@
-const firstCharUpperCase = require('../firstCharUpperCase');
+import firstCharUpperCase from '../firstCharUpperCase';
 
-module.exports = (sliceName) => {
+export default (sliceName) => {
   const typeName = `${firstCharUpperCase(sliceName)}Schema`;
 
   return `import { createSlice, PayloadAction } from '@reduxjs/toolkit';

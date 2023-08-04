@@ -1,5 +1,5 @@
 const fs = require('fs/promises');
-const resolveRoot = require('../resolveRoot');
+const resolveRoot = require('../resolveRoot').default;
 const createModel = require('./createModel');
 const createUI = require('./createUI');
 const createPublicApi = require('./createPublicApi');
