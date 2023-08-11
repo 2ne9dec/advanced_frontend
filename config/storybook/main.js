@@ -9,23 +9,27 @@ module.exports = {
       },
     },
     '@storybook/addon-interactions',
-    'storybook-addon-mock/register',
+    'storybook-addon-mock',
     'storybook-addon-themes',
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: '@storybook/builder-webpack5',
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
   },
-
+  features: {
+    storyStoreV7: true,
+  },
+  staticDirs: ['../public'],
+  docs: {
+    autodocs: true,
+  },
   webpackFinal: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test('.svg'));
     fileLoaderRule.exclude = /\.svg$/;
-
     config.module.rules.push({
       test: /\.svg$/,
       use: ['@svgr/webpack'],
     });
-
     return config;
   },
 };

@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Popover } from './Popover';
 
 export default {
@@ -14,9 +14,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof Popover>;
+} as Meta<typeof Popover>;
 
-const Template: ComponentStory<typeof Popover> = (args) => <Popover {...args} />;
+const Template: StoryFn<typeof Popover> = (args) => <Popover {...args} />;
 
 export const TopRight = Template.bind({});
 TopRight.args = {};

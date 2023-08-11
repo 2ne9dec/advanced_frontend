@@ -21,19 +21,13 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
     setCollapsed((prev) => !prev);
   };
 
-  const sidebarItemList = useMemo(() => sidebarItemsList.map((item) => (
-    <SidebarItem
-      key={item.path}
-      item={item}
-      collapsed={collapsed}
-    />
-  )), [collapsed, sidebarItemsList]);
+  const sidebarItemList = useMemo(
+    () => sidebarItemsList.map((item) => <SidebarItem key={item.path} item={item} collapsed={collapsed} />),
+    [collapsed, sidebarItemsList],
+  );
 
   return (
-    <aside
-      data-testid='sidebar'
-      className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
-    >
+    <aside data-testid='sidebar' className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}>
       <Button
         data-testid='sidebar-toggle'
         onClick={onToggle}
@@ -47,8 +41,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       <VStack gap={'16'} className={cls.items}>
         {sidebarItemList}
       </VStack>
-      {collapsed
-        ? (
+      {collapsed ? (
         <VStack role={'navigation'} gap={'8'} align={'center'} className={cls.switchers}>
           <ThemeSwitcher />
           <LangSwitcher short={collapsed} />
@@ -59,7 +52,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           <LangSwitcher short={collapsed} />
         </HStack>
       )}
-      
     </aside>
   );
 });

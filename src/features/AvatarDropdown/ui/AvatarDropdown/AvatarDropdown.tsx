@@ -8,7 +8,6 @@ import { getUserAuthData, isUserAdmin, isUserManager, userActions } from '@/enti
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 
-
 interface AvatarDropdownProps {
   className?: string;
 }

@@ -33,13 +33,19 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -54,25 +60,9 @@ const LoginForm = ({ className, onSuccess }: LoginFormProps) => {
       <VStack max gap={'8'} className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Authorization')} />
         {error && <Text text={t('Error login or password')} theme={TextTheme.ERROR} />}
-        <Input
-          autofocus
-          type='text'
-          placeholder={t('Username')}
-          onChange={onChangeUsername}
-          value={username}
-        />
-        <Input
-          type='text'
-          placeholder={t('Password')}
-          onChange={onChangePassword}
-          value={password}
-        />
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          className={cls.loginBtn}
-          onClick={onLoginClick}
-          disabled={isLoading}
-        >
+        <Input autofocus type='text' placeholder={t('Username')} onChange={onChangeUsername} value={username} />
+        <Input type='text' placeholder={t('Password')} onChange={onChangePassword} value={password} />
+        <Button theme={ButtonTheme.OUTLINE} className={cls.loginBtn} onClick={onLoginClick} disabled={isLoading}>
           {t('Log_In')}
         </Button>
       </VStack>

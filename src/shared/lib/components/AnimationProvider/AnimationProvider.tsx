@@ -13,10 +13,7 @@ const AnimationContext = createContext<AnimationContextPayload>({});
 
 // Обе либы зависят друг от друга
 const getAsyncAnimationModules = async () => {
-  return Promise.all([
-    import('@react-spring/web'),
-    import('@use-gesture/react')
-  ]);
+  return Promise.all([import('@react-spring/web'), import('@use-gesture/react')]);
 };
 
 export const useAnimationLibs = () => {
@@ -37,15 +34,14 @@ export const AnimationProvider = ({ children }: { children: ReactNode }) => {
     });
   }, []);
 
-  const value = useMemo(() => ({
-    Gesture: GestureRef.current,
-    Spring: SpringRef.current,
-    isLoaded,
-  }), [isLoaded]);
-
-  return (
-    <AnimationContext.Provider value={value}>
-      {children}
-    </AnimationContext.Provider>
+  const value = useMemo(
+    () => ({
+      Gesture: GestureRef.current,
+      Spring: SpringRef.current,
+      isLoaded,
+    }),
+    [isLoaded],
   );
+
+  return <AnimationContext.Provider value={value}>{children}</AnimationContext.Provider>;
 };

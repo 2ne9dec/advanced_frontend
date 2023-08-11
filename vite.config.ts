@@ -7,10 +7,7 @@ export default defineConfig({
     open: true,
     port: 5173,
   },
-  plugins: [
-    svgr({ exportAsDefault: true }),
-    react(),
-  ],
+  plugins: [svgr({ exportAsDefault: true }), react()],
   resolve: {
     alias: [{ find: '@', replacement: '/src' }],
   },

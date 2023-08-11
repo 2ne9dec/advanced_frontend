@@ -43,11 +43,7 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
       {canEdit && (
         <>
           {readOnly ? (
-            <Button
-              theme={ButtonTheme.OUTLINE}
-              onClick={onEdit}
-              data-testid={'EditableProfileCardHeader.EditButton'}
-            >
+            <Button theme={ButtonTheme.OUTLINE} onClick={onEdit} data-testid={'EditableProfileCardHeader.EditButton'}>
               {t('Edit')}
             </Button>
           ) : (

@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook';
 import { Skeleton } from './Skeleton';
@@ -9,9 +9,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Skeleton>;
+} as Meta<typeof Skeleton>;
 
-const Template: ComponentStory<typeof Skeleton> = (args) => <Skeleton {...args} />;
+const Template: StoryFn<typeof Skeleton> = (args) => <Skeleton {...args} />;
 
 export const Primary = Template.bind({});
 Primary.args = {
@@ -40,4 +40,3 @@ CircleDark.args = {
   height: 100,
 };
 CircleDark.decorators = [ThemeDecorator(Theme.DARK)];
-

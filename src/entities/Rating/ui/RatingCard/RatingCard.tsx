@@ -22,15 +22,7 @@ interface RatingCardProps {
 }
 
 export const RatingCard = memo((props: RatingCardProps) => {
-  const {
-    className,
-    feedbackTitle,
-    hasFeedback,
-    onAccept,
-    onCancel,
-    title,
-    rate = 0,
-  } = props;
+  const { className, feedbackTitle, hasFeedback, onAccept, onCancel, title, rate = 0 } = props;
   const { t } = useTranslation();
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [starsCount, setStarsCount] = useState(rate);
@@ -57,11 +49,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const modalContent = (
     <>
       <Text title={feedbackTitle} />
-      <Input
-        value={feedback}
-        onChange={setFeedback}
-        placeholder={t('Feedback')}
-      />
+      <Input value={feedback} onChange={setFeedback} placeholder={t('Feedback')} />
     </>
   );
 

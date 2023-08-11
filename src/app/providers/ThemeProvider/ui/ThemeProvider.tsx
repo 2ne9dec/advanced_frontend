@@ -15,13 +15,13 @@ export const ThemeProvider = (props: ThemeProviderProps) => {
 
   const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
 
-  const defaultProps = useMemo(() => ({
-    theme,
-    setTheme,
-  }), [theme]);
+  const defaultProps = useMemo(
+    () => ({
+      theme,
+      setTheme,
+    }),
+    [theme],
+  );
 
-  return (
-    <ThemeContext.Provider value={defaultProps}>
-      {children}
-    </ThemeContext.Provider>);
+  return <ThemeContext.Provider value={defaultProps}>{children}</ThemeContext.Provider>;
 };

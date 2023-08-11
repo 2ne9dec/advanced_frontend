@@ -81,17 +81,13 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
           <Avatar size={200} src={article?.img} className={cls.avatar} />
         </HStack>
         <VStack gap={'4'} max>
-          <Text
-            title={article?.title}
-            text={article?.subtitle}
-            size={TextSize.L}
-          />
+          <Text title={article?.title} text={article?.subtitle} size={TextSize.L} />
           <HStack max gap={'8'}>
-            <Icon Svg={EyeIcon}/>
+            <Icon Svg={EyeIcon} />
             <Text text={String(article?.views)} />
           </HStack>
           <HStack max gap={'8'}>
-            <Icon Svg={CalendarIcon}/>
+            <Icon Svg={CalendarIcon} />
             <Text text={article?.createdAt} />
           </HStack>
         </VStack>

@@ -26,9 +26,12 @@ const AddCommentForm = (props: AddCommentFormProps) => {
   const { t } = useTranslation();
   const dispatch = useAppDispatch();
 
-  const onCommentTextChange = useCallback((value: string) => {
+  const onCommentTextChange = useCallback(
+    (value: string) => {
       dispatch(addCommentFormActions.setText(value));
-  }, [dispatch]);
+    },
+    [dispatch],
+  );
 
   const onSendHandler = useCallback(() => {
     onSendComment(text || '');
@@ -44,11 +47,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
           value={text}
           onChange={onCommentTextChange}
         />
-        <Button
-          onClick={onSendHandler}
-        >
-          {t('Send')}
-        </Button>
+        <Button onClick={onSendHandler}>{t('Send')}</Button>
       </HStack>
     </DynamicModuleLoader>
   );

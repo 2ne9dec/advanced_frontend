@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { Theme } from '@/shared/const/theme';
 import { ThemeDecorator } from '@/shared/config/storybook';
 import { LangSwitcher } from './LangSwitcher';
@@ -9,9 +9,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof LangSwitcher>;
+} as Meta<typeof LangSwitcher>;
 
-const Template: ComponentStory<typeof LangSwitcher> = (args) => <LangSwitcher {...args} />;
+const Template: StoryFn<typeof LangSwitcher> = (args) => <LangSwitcher {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

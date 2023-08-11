@@ -14,37 +14,36 @@ export const ArticleTypeTabs = memo((props: ArticleTypeTabsProps) => {
   const { className, value, onChangeType } = props;
   const { t } = useTranslation('articles');
 
-  const typeTabs = useMemo<TabItem[]>(() => [
-    {
-      value: ArticleType.ALL,
-      content: t('ALL'),
-    },
-    {
-      value: ArticleType.IT,
-      content: t('IT'),
-    },
-    {
-      value: ArticleType.ECONOMICS,
-      content: t('ECONOMICS'),
-    },
-    {
-      value: ArticleType.SCIENCE,
-      content: t('SCIENCE'),
-    },
-  ], [t]);
-
-  const onTabClick = useCallback((tab: TabItem) => {
-    onChangeType(tab.value as ArticleType);
-  }, [onChangeType]);
-
-  return (
-    <Tabs
-      value={value}
-      onTabClick={onTabClick}
-      tabs={typeTabs}
-      className={classNames('', {}, [className])}
-    />
+  const typeTabs = useMemo<TabItem[]>(
+    () => [
+      {
+        value: ArticleType.ALL,
+        content: t('ALL'),
+      },
+      {
+        value: ArticleType.IT,
+        content: t('IT'),
+      },
+      {
+        value: ArticleType.ECONOMICS,
+        content: t('ECONOMICS'),
+      },
+      {
+        value: ArticleType.SCIENCE,
+        content: t('SCIENCE'),
+      },
+    ],
+    [t],
   );
+
+  const onTabClick = useCallback(
+    (tab: TabItem) => {
+      onChangeType(tab.value as ArticleType);
+    },
+    [onChangeType],
+  );
+
+  return <Tabs value={value} onTabClick={onTabClick} tabs={typeTabs} className={classNames('', {}, [className])} />;
 });
 
 ArticleTypeTabs.displayName = 'ArticleTypeTabs';

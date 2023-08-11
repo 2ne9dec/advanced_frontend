@@ -22,25 +22,12 @@ const getSkeletons = (view: ArticleView) =>
     .map((_, index) => <ArticleListItemSkeleton className={cls.card} key={index} view={view} />);
 
 export const ArticleList = memo((props: ArticleListProps) => {
-  const {
-    className,
-    articles,
-    view = ArticleView.TILE,
-    isLoading,
-    target,
-  } = props;
+  const { className, articles, view = ArticleView.TILE, isLoading, target } = props;
 
   const { t } = useTranslation('articles');
 
   const renderArticle = (article: Article) => {
-    return (
-      <ArticleListItem
-        article={article}
-        view={view}
-        key={article.id}
-        className={cls.card}
-        target={target}
-      />);
+    return <ArticleListItem article={article} view={view} key={article.id} className={cls.card} target={target} />;
   };
 
   if (!isLoading && !articles.length) {

@@ -14,12 +14,7 @@ interface StarRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = memo((props: StarRatingProps) => {
-  const {
-    className,
-    onSelect,
-    selectedStars = 0,
-    size = 30,
-  } = props;
+  const { className, onSelect, selectedStars = 0, size = 30 } = props;
 
   const [currentStarsCount, setCurrentStarsCount] = useState(selectedStars);
   const [isSelected, setIsSelected] = useState(Boolean(selectedStars));
@@ -56,11 +51,7 @@ export const StarRating = memo((props: StarRatingProps) => {
           height={size}
           width={size}
           key={starNumber}
-          className={classNames(
-            cls.starIcon,
-            mods,
-            [currentStarsCount >= starNumber ? cls.hovered : cls.normal]
-          )}
+          className={classNames(cls.starIcon, mods, [currentStarsCount >= starNumber ? cls.hovered : cls.normal])}
           onMouseEnter={onHover(starNumber)}
           onMouseLeave={onLeave}
           onClick={onClick(starNumber)}

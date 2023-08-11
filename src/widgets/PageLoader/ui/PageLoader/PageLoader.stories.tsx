@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { ThemeDecorator } from '@/shared/config/storybook';
 import { PageLoader } from './PageLoader';
 import { Theme } from '@/shared/const/theme';
@@ -9,9 +9,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof PageLoader>;
+} as Meta<typeof PageLoader>;
 
-const Template: ComponentStory<typeof PageLoader> = (args) => <PageLoader {...args} />;
+const Template: StoryFn<typeof PageLoader> = (args) => <PageLoader {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};

@@ -15,11 +15,7 @@ interface DynamicModuleLoaderProps {
 }
 
 export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
-  const {
-    children,
-    reducers,
-    removeAfterUnmount = true,
-  } = props;
+  const { children, reducers, removeAfterUnmount = true } = props;
 
   const dispatch = useAppDispatch();
   const store = useStore() as ReduxStoreWithManager;
@@ -49,9 +45,5 @@ export const DynamicModuleLoader = (props: DynamicModuleLoaderProps) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  return (
-    <>
-      {children}
-    </>
-  );
+  return <>{children}</>;
 };

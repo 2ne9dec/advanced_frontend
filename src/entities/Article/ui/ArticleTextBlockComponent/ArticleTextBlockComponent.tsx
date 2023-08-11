@@ -16,10 +16,7 @@ export const ArticleTextBlockComponent = memo((props: ArticleTextBlockComponentP
     <VStack gap={'4'} className={classNames('', {}, [className])}>
       {block.title && <Text title={block.title} />}
       {block.paragraphs.map((paragraph) => (
-        <Text
-          key={paragraph}
-          text={paragraph}
-        />
+        <Text key={paragraph} text={paragraph} />
       ))}
     </VStack>
   );

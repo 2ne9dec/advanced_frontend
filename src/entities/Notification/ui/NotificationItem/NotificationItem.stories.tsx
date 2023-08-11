@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { NotificationSchema } from '../../model/types/NotificationSchema';
 import { StoreDecorator } from '@/shared/config/storybook';
 import { NotificationItem } from './NotificationItem';
@@ -9,9 +9,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof NotificationItem>;
+} as Meta<typeof NotificationItem>;
 
-const Template: ComponentStory<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
+const Template: StoryFn<typeof NotificationItem> = (args) => <NotificationItem {...args} />;
 
 const notification: NotificationSchema = {
   id: '1',

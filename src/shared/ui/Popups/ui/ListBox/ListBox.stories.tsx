@@ -1,7 +1,7 @@
 // eslint-disable-next-line 2ne9dec-plugin/layer-imports
 import { Currency } from '@/entities/Currency';
 import { action } from '@storybook/addon-actions';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 
 import { ListBox } from './ListBox';
 
@@ -18,9 +18,9 @@ export default {
       </div>
     ),
   ],
-} as ComponentMeta<typeof ListBox>;
+} as Meta<typeof ListBox>;
 
-const Template: ComponentStory<typeof ListBox> = (args) => <ListBox {...args} />;
+const Template: StoryFn<typeof ListBox> = (args) => <ListBox {...args} />;
 
 export const TopRight = Template.bind({});
 TopRight.args = {

@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import { StoreDecorator, ThemeDecorator } from '@/shared/config/storybook';
 import { Sidebar } from './Sidebar';
 import { Theme } from '@/shared/const/theme';
@@ -9,9 +9,9 @@ export default {
   argTypes: {
     backgroundColor: { control: 'color' },
   },
-} as ComponentMeta<typeof Sidebar>;
+} as Meta<typeof Sidebar>;
 
-const Template: ComponentStory<typeof Sidebar> = (args) => <Sidebar {...args} />;
+const Template: StoryFn<typeof Sidebar> = (args) => <Sidebar {...args} />;
 
 export const Light = Template.bind({});
 Light.args = {};
