@@ -19,10 +19,6 @@ module.exports = {
   features: {
     storyStoreV7: true,
   },
-  staticDirs: ['../public'],
-  docs: {
-    autodocs: true,
-  },
   webpackFinal: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test && rule.test.test('.svg'));
     fileLoaderRule.exclude = /\.svg$/;
