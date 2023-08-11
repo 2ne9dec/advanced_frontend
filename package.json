@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "resolutions": {
+    "jackspeak": "2.1.1"
+  },
   "scripts": {
     "start": "webpack serve --env port=3000",
     "start:vite": "vite",
