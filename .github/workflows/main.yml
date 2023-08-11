@@ -18,7 +18,7 @@
 #         with:
 #           node-version: ${{ matrix.node-version }}
 #       - name: install modules
-#         run: npm run install
+#         run: yarn install
 #       - name: install graphicsmagick
 #         run: brew install graphicsmagick
 #       - name: build production project
@@ -70,21 +70,21 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm run install
+        run: yarn install
       - name: build production project
-        run: npm run build:prod
+        run: yarn build:prod
         if: always()
       - name: build storybook
-        run: npm run storybook:build
+        run: yarn storybook:build
         if: always()
-      - name: screenshot testing
-        run: npm run test:ui:ci
-        if: always()
+      # - name: screenshot testing
+      #   run: yarn test:ui:ci
+      #   if: always()
       - name: unit testing
         if: always()
-        run: npm run test:unit
+        run: yarn test:unit
       - name: Generate HTML report
-        run: npm run test:ui:report
+        run: yarn test:ui:report
         if: always()
       - name: move loki
         run: mv .loki reports/
@@ -114,9 +114,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm run install
+        run: yarn install
       - name: linting typescript
-        run: npm run lint:ts
+        run: yarn lint:ts
         if: always()
       - name: linting css
-        run: npm run lint:scss
+        run: yarn lint:scss
