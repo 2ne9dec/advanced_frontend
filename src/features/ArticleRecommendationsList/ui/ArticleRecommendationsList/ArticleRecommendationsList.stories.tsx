@@ -18,7 +18,7 @@ const article: Article = {
   title: 'Javascript news',
   subtitle: 'Что нового в JS за 2022 год?',
   user: { id: '1', username: 'Vadim' },
-  img: 'https://openclipart.org/image/800px/272343',
+  img: 'https://img.icons8.com/color/240/null/kotlin.png',
   views: 1022,
   createdAt: '26.01.2023',
   type: [ArticleType.IT],

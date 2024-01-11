@@ -17,7 +17,7 @@ const article = {
   id: '1',
   title: 'Javascript news asfasjf asfjkask f',
   subtitle: 'Что нового в JS за 2022 год?',
-  img: 'https://openclipart.org/image/800px/272343',
+  img: 'https://img.icons8.com/color/240/null/kotlin.png',
   views: 1022,
   createdAt: '26.02.2022',
   user: {
