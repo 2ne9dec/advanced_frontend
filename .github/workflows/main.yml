@@ -118,5 +118,5 @@ jobs:
       - name: linting typescript
         run: yarn lint:ts
         if: always()
-      - name: linting css
+      - name: linting scss
         run: yarn lint:scss
